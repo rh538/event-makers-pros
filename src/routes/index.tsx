@@ -459,37 +459,7 @@ function Services() {
         </div>
         </div>
 
-        {/* Featured: Viana Bate Forte 2026 */}
-        <div className="mb-20">
-          <div className="flex items-end justify-between mb-8 flex-wrap gap-4">
-            <div>
-              <div className="eyebrow mb-3 text-primary">Em destaque · 2026</div>
-              <h3 className="font-display font-black text-3xl md:text-5xl leading-none">
-                Viana Bate Forte
-              </h3>
-              <p className="text-muted-foreground mt-3 max-w-xl text-sm md:text-base">
-                Produção integral, palco, som, luz e estruturas no coração de Viana do Castelo.
-              </p>
-            </div>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
-            {vianaBateForte.map((img, i) => (
-              <div
-                key={img.src}
-                className={`relative overflow-hidden bg-surface ${
-                  i === 0 ? "col-span-2 md:col-span-2 md:row-span-2 aspect-square md:aspect-auto" : "aspect-[4/5]"
-                }`}
-              >
-                <img
-                  src={img.src}
-                  alt={img.alt}
-                  loading="lazy"
-                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 hover:scale-105"
-                />
-              </div>
-            ))}
-          </div>
-        </div>
+
 
     </section>
   );
