@@ -38,14 +38,14 @@ const heroImageUrl = `https://id-preview--c27d3510-e21e-4bf5-a619-57914eae6833.l
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "PALCO — Produção de Eventos, Equipamentos e Gestão de Bares" },
+      { title: "Eventualidades — Produção de Eventos, Equipamentos e Gestão de Bares" },
       {
         name: "description",
         content:
           "Há mais de 30 anos a transformar ideias em festivais, concertos e grandes produções. Equipamentos, produção, gestão de bares e agenciamento artístico.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:title", content: "PALCO — Eventos que ficam na memória" },
+      { property: "og:title", content: "Eventualidades — Eventos que ficam na memória" },
       {
         property: "og:description",
         content:
@@ -53,7 +53,7 @@ export const Route = createFileRoute("/")({
       },
       { property: "og:image", content: heroImageUrl },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "PALCO — Eventos que ficam na memória" },
+      { name: "twitter:title", content: "Eventualidades — Eventos que ficam na memória" },
       {
         name: "twitter:description",
         content:
@@ -704,9 +704,9 @@ function Footer() {
     <footer className="bg-surface border-t border-border">
       <div className="container-x py-16 grid md:grid-cols-12 gap-10">
         <div className="md:col-span-4">
-          <div className="flex items-center gap-2 mb-6">
-            <span className="inline-block h-3 w-3 bg-primary" />
-            <span className="font-display font-black tracking-widest">PALCO</span>
+          <div className="flex items-center gap-3 mb-6">
+            <img src={logoAsset.url} alt="Eventualidades" width={40} height={40} className="h-10 w-10 object-contain invert" />
+            <span className="font-display font-black tracking-widest">EVENTUALIDADES</span>
           </div>
           <p className="text-sm text-muted-foreground max-w-xs">
             Produção integral de eventos. Há mais de 30 anos a montar palco em Portugal.
@@ -719,7 +719,7 @@ function Footer() {
       </div>
       <div className="border-t border-border">
         <div className="container-x py-6 flex flex-wrap items-center justify-between gap-4 text-xs text-muted-foreground">
-          <div>© {new Date().getFullYear()} PALCO. Todos os direitos reservados.</div>
+          <div>© {new Date().getFullYear()} Eventualidades. Todos os direitos reservados.</div>
           <div className="flex items-center gap-6">
             <a href="#" className="hover:text-primary">Instagram</a>
             <a href="#" className="hover:text-primary">LinkedIn</a>
