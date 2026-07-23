@@ -33,6 +33,21 @@ import project5 from "@/assets/project-5.jpg";
 import logoAsset from "@/assets/logo.png.asset.json";
 import mutantMelodyAsset from "@/assets/mutant-melody.png.asset.json";
 import project6 from "@/assets/project-6.jpg";
+import vbfAerial from "@/assets/vbf-aerial-palco.jpg.asset.json";
+import vbfPalcoRoxo from "@/assets/vbf-palco-roxo.jpg.asset.json";
+import vbfBeatriz from "@/assets/vbf-beatriz-rosario.jpg.asset.json";
+import vbfDama from "@/assets/vbf-dama-verde.jpg.asset.json";
+import vbfLuzes from "@/assets/vbf-luzes-rua.webp.asset.json";
+import vbfMultidao from "@/assets/vbf-aerial-multidao.webp.asset.json";
+
+const vianaBateForte = [
+  { src: vbfAerial.url, alt: "Vista aérea do palco Viana Bate Forte 2026" },
+  { src: vbfPalcoRoxo.url, alt: "Palco iluminado a roxo com banda ao vivo" },
+  { src: vbfBeatriz.url, alt: "Concerto de Beatriz Rosário no Viana Bate Forte" },
+  { src: vbfDama.url, alt: "Concerto ao vivo com iluminação verde" },
+  { src: vbfLuzes.url, alt: "Iluminação da cidade durante o festival" },
+  { src: vbfMultidao.url, alt: "Multidão vista de cima no Viana Bate Forte" },
+];
 
 const heroImageUrl = `https://id-preview--c27d3510-e21e-4bf5-a619-57914eae6833.lovable.app${heroFestival}`;
 
@@ -442,7 +457,10 @@ function Services() {
             </div>
           </article>
         </div>
-      </div>
+        </div>
+
+
+
     </section>
   );
 }
@@ -463,6 +481,40 @@ function Projects() {
             Ver Portfólio <ArrowRight className="h-3.5 w-3.5" />
           </a>
         </div>
+
+        {/* Featured: Viana Bate Forte 2026 */}
+        <div className="mb-20 border border-border p-6 md:p-10 bg-background">
+          <div className="flex items-end justify-between mb-8 flex-wrap gap-4">
+            <div>
+              <div className="eyebrow mb-3 text-primary">Em destaque · 2026</div>
+              <h3 className="font-display font-black text-3xl md:text-5xl leading-none">
+                Viana Bate Forte
+              </h3>
+              <p className="text-muted-foreground mt-3 max-w-xl text-sm md:text-base">
+                Produção integral no coração de Viana do Castelo — palco, som, luz e estruturas.
+              </p>
+            </div>
+            <div className="text-xs eyebrow">Festival · Município</div>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+            {vianaBateForte.map((img, i) => (
+              <div
+                key={img.src}
+                className={`relative overflow-hidden bg-surface aspect-[4/5] ${
+                  i === 0 ? "col-span-2 md:col-span-2 md:row-span-2 md:aspect-auto" : ""
+                }`}
+              >
+                <img
+                  src={img.src}
+                  alt={img.alt}
+                  loading="lazy"
+                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 hover:scale-105"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
           {projects.map((p) => (
