@@ -546,10 +546,13 @@ function Clients() {
             <div className="eyebrow">Parceiros Técnicos</div>
           </div>
           <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-6">
-            <div className="flex flex-col items-center gap-2">
-              <span className="font-display font-black text-2xl md:text-3xl tracking-tight">
-                Mutant <span className="text-primary">Melody</span>
-              </span>
+            <div className="flex flex-col items-center gap-3">
+              <img
+                src={mutantMelodyAsset.url}
+                alt="Mutant Melody"
+                className="h-20 md:h-24 w-auto object-contain"
+                loading="lazy"
+              />
               <span className="text-xs uppercase tracking-widest text-muted-foreground">Som · Sound Partner</span>
             </div>
           </div>
