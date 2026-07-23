@@ -33,6 +33,21 @@ import project5 from "@/assets/project-5.jpg";
 import logoAsset from "@/assets/logo.png.asset.json";
 import mutantMelodyAsset from "@/assets/mutant-melody.png.asset.json";
 import project6 from "@/assets/project-6.jpg";
+import vbfAerial from "@/assets/vbf-aerial-palco.jpg.asset.json";
+import vbfPalcoRoxo from "@/assets/vbf-palco-roxo.jpg.asset.json";
+import vbfBeatriz from "@/assets/vbf-beatriz-rosario.jpg.asset.json";
+import vbfDama from "@/assets/vbf-dama-verde.jpg.asset.json";
+import vbfLuzes from "@/assets/vbf-luzes-rua.webp.asset.json";
+import vbfMultidao from "@/assets/vbf-aerial-multidao.webp.asset.json";
+
+const vianaBateForte = [
+  { src: vbfAerial.url, alt: "Vista aérea do palco Viana Bate Forte 2026" },
+  { src: vbfPalcoRoxo.url, alt: "Palco iluminado a roxo com banda ao vivo" },
+  { src: vbfBeatriz.url, alt: "Concerto de Beatriz Rosário no Viana Bate Forte" },
+  { src: vbfDama.url, alt: "Concerto ao vivo com iluminação verde" },
+  { src: vbfLuzes.url, alt: "Iluminação da cidade durante o festival" },
+  { src: vbfMultidao.url, alt: "Multidão vista de cima no Viana Bate Forte" },
+];
 
 const heroImageUrl = `https://id-preview--c27d3510-e21e-4bf5-a619-57914eae6833.lovable.app${heroFestival}`;
 
