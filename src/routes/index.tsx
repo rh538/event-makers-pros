@@ -532,12 +532,26 @@ function Clients() {
         <div className="text-center mb-10">
           <div className="eyebrow">Clientes · Municípios · Marcas · Festivais</div>
         </div>
-        <div className="flex flex-wrap justify-center gap-x-10 gap-y-4">
+        <div className="flex flex-wrap justify-center gap-x-10 gap-y-4 mb-16">
           {clients.map((c) => (
             <span key={c} className="font-display font-bold text-sm md:text-base text-muted-foreground hover:text-foreground transition-colors">
               {c}
             </span>
           ))}
+        </div>
+
+        <div className="pt-10 border-t border-border">
+          <div className="text-center mb-8">
+            <div className="eyebrow">Parceiros Técnicos</div>
+          </div>
+          <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-6">
+            <div className="flex flex-col items-center gap-2">
+              <span className="font-display font-black text-2xl md:text-3xl tracking-tight">
+                Mutant <span className="text-primary">Melody</span>
+              </span>
+              <span className="text-xs uppercase tracking-widest text-muted-foreground">Som · Sound Partner</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
