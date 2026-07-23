@@ -30,6 +30,7 @@ import project2 from "@/assets/project-2.jpg";
 import project3 from "@/assets/project-3.jpg";
 import project4 from "@/assets/project-4.jpg";
 import project5 from "@/assets/project-5.jpg";
+import logoAsset from "@/assets/logo.png.asset.json";
 import project6 from "@/assets/project-6.jpg";
 
 const heroImageUrl = `https://id-preview--c27d3510-e21e-4bf5-a619-57914eae6833.lovable.app${heroFestival}`;
@@ -168,9 +169,9 @@ function Nav() {
   return (
     <header className="fixed top-0 inset-x-0 z-50 backdrop-blur-md bg-background/70 border-b border-border/60">
       <div className="container-x flex items-center justify-between h-16 md:h-20">
-        <a href="#top" className="flex items-center gap-2">
-          <span className="inline-block h-3 w-3 bg-primary" />
-          <span className="font-display font-black tracking-widest text-sm md:text-base">PALCO</span>
+        <a href="#top" className="flex items-center gap-3">
+          <img src={logoAsset.url} alt="Eventualidades" width={40} height={40} className="h-9 w-9 md:h-10 md:w-10 object-contain invert" />
+          <span className="font-display font-black tracking-widest text-sm md:text-base hidden sm:inline">EVENTUALIDADES</span>
         </a>
         <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
           <a href="#servicos" className="hover:text-primary transition-colors">Serviços</a>
