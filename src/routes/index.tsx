@@ -31,6 +31,7 @@ import project3 from "@/assets/project-3.jpg";
 import project4 from "@/assets/project-4.jpg";
 import project5 from "@/assets/project-5.jpg";
 import logoAsset from "@/assets/logo.png.asset.json";
+import mutantMelodyAsset from "@/assets/mutant-melody.png.asset.json";
 import project6 from "@/assets/project-6.jpg";
 
 const heroImageUrl = `https://id-preview--c27d3510-e21e-4bf5-a619-57914eae6833.lovable.app${heroFestival}`;
