@@ -238,7 +238,7 @@ function Hero() {
           </div>
 
           <p className="mt-6 text-base md:text-lg max-w-2xl text-muted-foreground leading-relaxed">
-            Há mais de 30 anos a transformar ideias em festivais, concertos, eventos corporativos e grandes produções.
+            Há mais de 20 anos a transformar ideias em festivais, concertos, eventos corporativos e grandes produções.
           </p>
 
           <div className="mt-10 flex flex-wrap gap-3">
@@ -249,11 +249,10 @@ function Hero() {
           </div>
         </div>
 
-        <div className="mt-16 md:mt-24 grid grid-cols-3 md:grid-cols-4 gap-6 md:gap-10 max-w-3xl border-t border-border/60 pt-8">
+        <div className="mt-16 md:mt-24 grid grid-cols-3 gap-6 md:gap-10 max-w-3xl border-t border-border/60 pt-8">
           {[
-            { n: "30+", l: "Anos" },
-            { n: "500+", l: "Eventos/ano" },
-            { n: "20M+", l: "Público" },
+            { n: "20+", l: "Anos" },
+            { n: "50+", l: "Eventos/ano" },
             { n: "100%", l: "Cobertura nacional" },
           ].map((s) => (
             <div key={s.l}>
