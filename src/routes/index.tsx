@@ -424,7 +424,7 @@ function Services() {
             </div>
             <div className="md:col-span-7 md:pt-4">
               <div className="grid grid-cols-2 md:grid-cols-3 gap-px bg-border">
-                {["Riders", "Implantações", "Stage Management", "Produção Executiva", "Coordenação Técnica", "Health & Safety"].map((t) => (
+                {["Riders", "Hospitalidade", "Stage Management", "Produção Executiva", "Coordenação Técnica", "Health & Safety"].map((t) => (
                   <div key={t} className="bg-background p-6 hover:bg-surface transition-colors">
                     <div className="font-display font-bold text-sm">{t}</div>
                   </div>
