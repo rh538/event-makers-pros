@@ -219,7 +219,7 @@ function Hero() {
 
       <div className="relative container-x pb-16 md:pb-28 pt-32 w-full">
         <div className="max-w-4xl">
-          <div className="eyebrow mb-6">Since 1993 · Portugal</div>
+          <div className="eyebrow mb-6">Since 2005 · Portugal</div>
           <h1 className="heading-xl">
             Produzimos eventos<br />
             que ficam na <span className="text-primary">memória</span>.
