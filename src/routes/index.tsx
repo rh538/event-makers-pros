@@ -445,24 +445,19 @@ function Projects() {
   return (
     <section id="projetos" className="py-24 md:py-36 bg-surface border-y border-border">
       <div className="container-x">
-        <div className="flex items-end justify-between mb-16 flex-wrap gap-6">
-          <div className="max-w-2xl">
-            <div className="eyebrow mb-6">Projetos</div>
-            <h2 className="heading-lg">
-              Os palcos onde<br />
-              <span className="text-primary">deixámos marca.</span>
-            </h2>
-          </div>
-          <a href="#contactos" className="btn-ghost !py-3 !px-5 !text-xs">
-            Ver Portfólio <ArrowRight className="h-3.5 w-3.5" />
-          </a>
+        <div className="mb-16">
+          <div className="eyebrow mb-6">Projetos</div>
+          <h2 className="heading-lg">
+            Últimos palcos onde<br />
+            <span className="text-primary">deixámos marca.</span>
+          </h2>
         </div>
 
-        {/* Featured: Viana Bate Forte 2026 */}
+        {/* Featured: Viana Bate Forte 2025 */}
         <div className="mb-20 border border-border p-6 md:p-10 bg-background">
           <div className="flex items-end justify-between mb-8 flex-wrap gap-4">
             <div>
-              <div className="eyebrow mb-3 text-primary">Em destaque · 2026</div>
+              <div className="eyebrow mb-3 text-primary">Em destaque · 2025</div>
               <h3 className="font-display font-black text-3xl md:text-5xl leading-none">
                 Viana Bate Forte
               </h3>
