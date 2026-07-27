@@ -155,9 +155,7 @@ function Home() {
       <Services />
       <Projects />
       <WhyUs />
-      <Clients />
-      <Testimonials />
-      <News />
+      <Partners />
       <Contact />
       <Footer />
     </div>
