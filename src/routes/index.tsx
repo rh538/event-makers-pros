@@ -58,14 +58,14 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Há mais de 30 anos a transformar ideias em festivais, concertos e grandes produções. Equipamentos, produção, gestão de bares e agenciamento artístico.",
+          "Há mais de 20 anos a transformar ideias em festivais, concertos e grandes produções. Equipamentos, produção, gestão de bares e agenciamento artístico.",
       },
       { property: "og:type", content: "website" },
       { property: "og:title", content: "Eventualidades — Eventos que ficam na memória" },
       {
         property: "og:description",
         content:
-          "Produção integral de eventos, aluguer de equipamentos, gestão de bares e representação artística. 30+ anos de experiência.",
+          "Produção integral de eventos, aluguer de equipamentos, gestão de bares e representação artística. 20+ anos de experiência.",
       },
       { property: "og:image", content: heroImageUrl },
       { name: "twitter:card", content: "summary_large_image" },
@@ -106,17 +106,16 @@ const services = [
     kicker: "02",
     title: "Aluguer de Equipamentos",
     lede: "Disponibilizamos equipamento profissional para qualquer dimensão de evento.",
-    image: stageEquipment,
-    items: ["Som", "Iluminação", "Vídeo LED", "Estruturas Truss", "Palcos", "Backline", "Torres de Delay", "Geradores", "Cablagem", "Distribuição elétrica", "Mesas e cadeiras"],
+    image: vbfPalcoRoxo.url,
+    items: ["Som", "Iluminação", "Vídeo LED", "Estruturas Truss", "Palcos", "Backline", "Torres de Delay", "Geradores", "Cablagem", "Distribuição elétrica", "Mesas e cadeiras", "Zona Kids LEGO", "Camarins", "WC's", "Efeitos e Pirotecnia"],
     icon: Speaker,
-    cta: "Ver Catálogo",
   },
   {
     id: "bares",
     kicker: "03",
     title: "Gestão de Bares",
     lede: "Gerimos bares em festivais e grandes eventos, assegurando toda a operação.",
-    image: bars,
+    image: vbfLuzes.url,
     items: ["Recursos Humanos", "Stock", "Logística", "POS", "Copos reutilizáveis", "Equipamentos", "Coordenação", "Licenciamento"],
     icon: Beer,
   },
@@ -126,38 +125,23 @@ const services = [
     title: "Agenciamento Artístico",
     lede: "Representamos artistas e ligamos promotores, municípios e agentes internacionais.",
     image: artist,
-    items: ["Booking", "Management", "Digressões", "Contratação", "Produção técnica"],
+    items: ["Booking", "Management", "Contratação", "Produção técnica"],
     icon: Music2,
   },
 ];
 
 const projects = [
-  { name: "Amadora Beer Fest", year: "2024", img: project1, tag: "Festival" },
-  { name: "Festival Paredes de Coura", year: "2024", img: project2, tag: "Festival" },
-  { name: "Rock in Rio Lisboa", year: "2024", img: project3, tag: "Grande Produção" },
-  { name: "Funchal Jazz Festival", year: "2023", img: project4, tag: "Festival" },
-  { name: "Eventos Corporativos", year: "2024", img: project5, tag: "Corporate" },
-  { name: "Festas Municipais", year: "2024", img: project6, tag: "Município" },
+  { name: "Viana Bate Forte", year: "2025", img: vbfAerial.url, tag: "Festival" },
+  { name: "Amadora Beer Fest", year: "2026", img: null, tag: "Festival" },
+  { name: "Festas da Cidade de Chaves", year: "2026", img: null, tag: "Município" },
 ];
 
-const clients = ["Município de Lisboa", "Câmara do Porto", "Super Bock", "Sagres", "MEO", "NOS", "RTP", "SIC", "TVI", "Everything is New", "Música no Coração", "Live Nation"];
-
-const testimonials = [
-  {
-    quote: "Uma equipa que compreende a exigência de um festival. Executam tudo com precisão milimétrica.",
-    author: "João Ferreira",
-    role: "Diretor, Festival XYZ",
-  },
-  {
-    quote: "Trabalham como se o evento fosse deles. É o parceiro técnico que qualquer produtor procura.",
-    author: "Marta Sousa",
-    role: "Câmara Municipal",
-  },
-  {
-    quote: "Do palco ao bar, tudo funcionou sem falhas. Voltámos a contratar no ano seguinte.",
-    author: "Ricardo Nunes",
-    role: "Head of Events, Marca Nacional",
-  },
+const partners = [
+  { name: "Mutant Melody", role: "Som" },
+  { name: "Publivez", role: "Publicidade" },
+  { name: "Segurvez", role: "Segurança" },
+  { name: "F&R Som", role: "Som" },
+  { name: "BrandPrint", role: "Impressão" },
 ];
 
 function Home() {
@@ -171,9 +155,7 @@ function Home() {
       <Services />
       <Projects />
       <WhyUs />
-      <Clients />
-      <Testimonials />
-      <News />
+      <Partners />
       <Contact />
       <Footer />
     </div>
@@ -237,7 +219,7 @@ function Hero() {
 
       <div className="relative container-x pb-16 md:pb-28 pt-32 w-full">
         <div className="max-w-4xl">
-          <div className="eyebrow mb-6">Since 1993 · Portugal</div>
+          <div className="eyebrow mb-6">Since 2005 · Portugal</div>
           <h1 className="heading-xl">
             Produzimos eventos<br />
             que ficam na <span className="text-primary">memória</span>.
@@ -254,7 +236,7 @@ function Hero() {
           </div>
 
           <p className="mt-6 text-base md:text-lg max-w-2xl text-muted-foreground leading-relaxed">
-            Há mais de 30 anos a transformar ideias em festivais, concertos, eventos corporativos e grandes produções.
+            Há mais de 20 anos a transformar ideias em festivais, concertos, eventos corporativos e grandes produções.
           </p>
 
           <div className="mt-10 flex flex-wrap gap-3">
@@ -265,11 +247,10 @@ function Hero() {
           </div>
         </div>
 
-        <div className="mt-16 md:mt-24 grid grid-cols-3 md:grid-cols-4 gap-6 md:gap-10 max-w-3xl border-t border-border/60 pt-8">
+        <div className="mt-16 md:mt-24 grid grid-cols-3 gap-6 md:gap-10 max-w-3xl border-t border-border/60 pt-8">
           {[
-            { n: "30+", l: "Anos" },
-            { n: "500+", l: "Eventos/ano" },
-            { n: "20M+", l: "Público" },
+            { n: "20+", l: "Anos" },
+            { n: "50+", l: "Eventos/ano" },
             { n: "100%", l: "Cobertura nacional" },
           ].map((s) => (
             <div key={s.l}>
@@ -307,7 +288,7 @@ function About() {
         <div className="md:col-span-4">
           <div className="eyebrow mb-6">Quem Somos</div>
           <h2 className="heading-lg">
-            Três décadas<br />
+            Duas décadas<br />
             <span className="text-primary">a montar palco.</span>
           </h2>
         </div>
@@ -316,11 +297,11 @@ function About() {
             Uma empresa especializada na <span className="text-foreground font-medium">produção integral de eventos</span>, aluguer de equipamentos audiovisuais, gestão de bares e representação artística.
           </p>
           <p>
-            Ao longo de mais de três décadas participámos na produção de alguns dos maiores eventos nacionais, desenvolvendo soluções técnicas e logísticas adaptadas a cada projeto.
+            Ao longo de mais de duas décadas participámos na produção de alguns dos maiores eventos nacionais, desenvolvendo soluções técnicas e logísticas adaptadas a cada projeto.
           </p>
           <div className="hair mt-10" />
           <div className="grid grid-cols-2 gap-6 pt-4">
-            <Stat icon={Calendar} label="Anos de operação" value="30+" />
+            <Stat icon={Calendar} label="Anos de operação" value="20+" />
             <Stat icon={Users} label="Profissionais" value="120+" />
             <Stat icon={Award} label="Grandes festivais" value="80+" />
             <Stat icon={Zap} label="Equipamentos próprios" value="Sim" />
@@ -426,11 +407,6 @@ function Services() {
                       </li>
                     ))}
                   </ul>
-                  {s.cta && (
-                    <a href="#contactos" className="btn-ghost !py-3 !px-5 !text-xs">
-                      {s.cta} <ArrowRight className="h-3.5 w-3.5" />
-                    </a>
-                  )}
                 </div>
               </article>
             );
@@ -448,7 +424,7 @@ function Services() {
             </div>
             <div className="md:col-span-7 md:pt-4">
               <div className="grid grid-cols-2 md:grid-cols-3 gap-px bg-border">
-                {["Riders", "Implantações", "Stage Management", "Produção Executiva", "Coordenação Técnica", "Health & Safety"].map((t) => (
+                {["Riders", "Hospitalidade", "Stage Management", "Produção Executiva", "Coordenação Técnica", "Health & Safety"].map((t) => (
                   <div key={t} className="bg-background p-6 hover:bg-surface transition-colors">
                     <div className="font-display font-bold text-sm">{t}</div>
                   </div>
@@ -469,24 +445,19 @@ function Projects() {
   return (
     <section id="projetos" className="py-24 md:py-36 bg-surface border-y border-border">
       <div className="container-x">
-        <div className="flex items-end justify-between mb-16 flex-wrap gap-6">
-          <div className="max-w-2xl">
-            <div className="eyebrow mb-6">Projetos</div>
-            <h2 className="heading-lg">
-              Os palcos onde<br />
-              <span className="text-primary">deixámos marca.</span>
-            </h2>
-          </div>
-          <a href="#contactos" className="btn-ghost !py-3 !px-5 !text-xs">
-            Ver Portfólio <ArrowRight className="h-3.5 w-3.5" />
-          </a>
+        <div className="mb-16">
+          <div className="eyebrow mb-6">Projetos</div>
+          <h2 className="heading-lg">
+            Últimos palcos onde<br />
+            <span className="text-primary">deixámos marca.</span>
+          </h2>
         </div>
 
-        {/* Featured: Viana Bate Forte 2026 */}
+        {/* Featured: Viana Bate Forte 2025 */}
         <div className="mb-20 border border-border p-6 md:p-10 bg-background">
           <div className="flex items-end justify-between mb-8 flex-wrap gap-4">
             <div>
-              <div className="eyebrow mb-3 text-primary">Em destaque · 2026</div>
+              <div className="eyebrow mb-3 text-primary">Em destaque · 2025</div>
               <h3 className="font-display font-black text-3xl md:text-5xl leading-none">
                 Viana Bate Forte
               </h3>
@@ -516,28 +487,31 @@ function Projects() {
         </div>
 
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-          {projects.map((p) => (
-            <a key={p.name} href="#contactos" className="group relative aspect-[4/5] overflow-hidden bg-background">
-              <img
-                src={p.img}
-                alt={p.name}
-                width={1200}
-                height={900}
-                loading="lazy"
-                className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-              />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+          {projects.slice(1).map((p) => (
+            <div key={p.name} className="group relative aspect-[4/5] overflow-hidden bg-background border border-border">
+              {p.img ? (
+                <img
+                  src={p.img}
+                  alt={p.name}
+                  width={1200}
+                  height={900}
+                  loading="lazy"
+                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+              ) : (
+                <div className="absolute inset-0 flex items-center justify-center bg-surface">
+                  <span className="text-xs eyebrow text-muted-foreground">Fotos em breve</span>
+                </div>
+              )}
               <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
               <div className="absolute inset-x-0 bottom-0 p-6">
                 <div className="text-xs eyebrow mb-2">{p.tag} · {p.year}</div>
-                <h3 className="font-display font-black text-xl md:text-2xl leading-tight group-hover:text-primary transition-colors">
+                <h3 className="font-display font-black text-xl md:text-2xl leading-tight">
                   {p.name}
                 </h3>
               </div>
-              <div className="absolute top-6 right-6 h-10 w-10 border border-border rounded-full flex items-center justify-center bg-background/40 backdrop-blur-sm group-hover:bg-primary group-hover:border-primary transition-all">
-                <ArrowRight className="h-4 w-4 -rotate-45 group-hover:rotate-0 transition-transform" />
-              </div>
-            </a>
+            </div>
           ))}
         </div>
       </div>
@@ -547,7 +521,7 @@ function Projects() {
 
 function WhyUs() {
   const reasons = [
-    { n: "01", t: "30+ anos de experiência", d: "Três décadas a montar e desmontar palcos por Portugal e Europa." },
+    { n: "01", t: "20+ anos de experiência", d: "Duas décadas a montar e desmontar palcos por Portugal e Europa." },
     { n: "02", t: "Equipa especializada", d: "Técnicos, produtores e gestores com pedigree em grandes festivais." },
     { n: "03", t: "Equipamentos próprios", d: "Parque técnico atualizado, som, luz, vídeo e estruturas." },
     { n: "04", t: "Cobertura nacional", d: "Do Algarve ao Minho, Açores e Madeira incluídos." },
@@ -578,62 +552,35 @@ function WhyUs() {
   );
 }
 
-function Clients() {
+function Partners() {
   return (
-    <section className="py-20 border-y border-border bg-surface">
+    <section className="py-20 md:py-24 border-y border-border bg-surface">
       <div className="container-x">
-        <div className="text-center mb-10">
-          <div className="eyebrow">Clientes · Municípios · Marcas · Festivais</div>
-        </div>
-        <div className="flex flex-wrap justify-center gap-x-10 gap-y-4 mb-16">
-          {clients.map((c) => (
-            <span key={c} className="font-display font-bold text-sm md:text-base text-muted-foreground hover:text-foreground transition-colors">
-              {c}
-            </span>
-          ))}
-        </div>
-
-        <div className="pt-10 border-t border-border">
-          <div className="text-center mb-8">
-            <div className="eyebrow">Parceiros Técnicos</div>
-          </div>
-          <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-6">
-            <div className="flex flex-col items-center gap-3">
-              <img
-                src={mutantMelodyAsset.url}
-                alt="Mutant Melody"
-                className="h-20 md:h-24 w-auto object-contain"
-                loading="lazy"
-              />
-              <span className="text-xs uppercase tracking-widest text-muted-foreground">Som · Sound Partner</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function Testimonials() {
-  return (
-    <section className="py-24 md:py-36">
-      <div className="container-x">
-        <div className="max-w-3xl mb-16">
-          <div className="eyebrow mb-6">Testemunhos</div>
-          <h2 className="heading-lg">
-            A palavra fica<br /><span className="text-primary">para quem confia.</span>
+        <div className="text-center mb-12">
+          <div className="eyebrow mb-4">Parceiros Técnicos</div>
+          <h2 className="heading-lg !text-3xl md:!text-4xl">
+            Ao lado dos <span className="text-primary">melhores.</span>
           </h2>
         </div>
-        <div className="grid md:grid-cols-3 gap-6">
-          {testimonials.map((t) => (
-            <blockquote key={t.author} className="border border-border p-8 md:p-10 bg-surface flex flex-col">
-              <div className="text-primary text-4xl font-display font-black mb-4 leading-none">"</div>
-              <p className="text-foreground leading-relaxed flex-1">{t.quote}</p>
-              <footer className="mt-6 pt-6 border-t border-border">
-                <div className="font-display font-bold text-sm">{t.author}</div>
-                <div className="text-xs text-muted-foreground mt-1">{t.role}</div>
-              </footer>
-            </blockquote>
+
+        <div className="flex justify-center mb-12">
+          <div className="flex flex-col items-center gap-3">
+            <img
+              src={mutantMelodyAsset.url}
+              alt="Mutant Melody"
+              className="h-20 md:h-24 w-auto object-contain"
+              loading="lazy"
+            />
+            <span className="text-xs uppercase tracking-widest text-muted-foreground">Som · Sound Partner</span>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-border border border-border">
+          {partners.filter((p) => p.name !== "Mutant Melody").map((p) => (
+            <div key={p.name} className="bg-background p-8 flex flex-col items-center justify-center text-center gap-2 min-h-[120px]">
+              <div className="font-display font-black text-lg md:text-xl tracking-wide">{p.name}</div>
+              <div className="text-xs uppercase tracking-widest text-muted-foreground">{p.role}</div>
+            </div>
           ))}
         </div>
       </div>
@@ -641,96 +588,83 @@ function Testimonials() {
   );
 }
 
-function News() {
-  const items = [
-    { date: "Setembro 2025", title: "Amadora Beer Fest — nova edição, novo palco principal", tag: "Festival" },
-    { date: "Agosto 2025", title: "Digressão Nacional — 12 municípios, 40 dias de produção", tag: "Digressão" },
-    { date: "Julho 2025", title: "Investimento em novo parque de LED de última geração", tag: "Equipamento" },
-  ];
-  return (
-    <section className="py-24 md:py-32 border-y border-border bg-surface">
-      <div className="container-x">
-        <div className="flex items-end justify-between mb-12 flex-wrap gap-6">
-          <div>
-            <div className="eyebrow mb-4">Notícias</div>
-            <h2 className="heading-lg !text-3xl md:!text-4xl">Últimos eventos</h2>
-          </div>
-          <a href="#contactos" className="text-sm font-display font-bold uppercase tracking-widest text-primary hover:underline">
-            Ver todos →
-          </a>
-        </div>
-        <div className="divide-y divide-border border-y border-border">
-          {items.map((n) => (
-            <a key={n.title} href="#" className="group grid md:grid-cols-12 gap-4 py-8 items-center">
-              <div className="md:col-span-2 text-xs uppercase tracking-widest text-muted-foreground">{n.date}</div>
-              <div className="md:col-span-2 text-xs eyebrow">{n.tag}</div>
-              <div className="md:col-span-7 font-display font-bold text-lg md:text-xl group-hover:text-primary transition-colors">
-                {n.title}
-              </div>
-              <div className="md:col-span-1 md:text-right">
-                <ArrowRight className="h-5 w-5 inline-block text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" />
-              </div>
-            </a>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
 
 function Contact() {
+  const contacts = [
+    {
+      area: "Produção · Agenciamento",
+      name: "Catarina Vieira",
+      phone: "+351 933 818 311",
+      phoneHref: "tel:+351933818311",
+      email: "catarinavieira@eventualidades.pt",
+    },
+    {
+      area: "Palcos · Som · Luz",
+      name: "João Moreira",
+      phone: "+351 913 536 646",
+      phoneHref: "tel:+351913536646",
+      email: "joaomoreira@eventualidades.pt",
+    },
+    {
+      area: "Gestão de Bares",
+      name: "João Paulo Viana",
+      phone: "+351 926 361 445",
+      phoneHref: "tel:+351926361445",
+      email: "joaoviana@eventualidades.pt",
+    },
+  ];
   return (
     <section id="contactos" className="py-24 md:py-36">
-      <div className="container-x grid md:grid-cols-12 gap-12">
-        <div className="md:col-span-5">
+      <div className="container-x">
+        <div className="max-w-3xl mb-16">
           <div className="eyebrow mb-6">Contactos</div>
           <h2 className="heading-lg mb-8">
             Vamos montar<br />
-            <span className="text-primary">o próximo palco.</span>
+            <span className="text-primary">o próximo palco?</span>
           </h2>
-          <p className="text-muted-foreground text-lg mb-10">
-            Responda em algumas linhas ao que precisa. Voltamos com um orçamento em 48 horas.
+          <p className="text-muted-foreground text-lg">
+            Fale diretamente com a pessoa certa. Voltamos com um orçamento em 48 horas.
           </p>
-          <div className="space-y-5">
-            <ContactRow icon={Phone} label="Telefone" value="+351 210 000 000" href="tel:+351210000000" />
-            <ContactRow icon={Mail} label="Email" value="geral@palco.pt" href="mailto:geral@palco.pt" />
-            <ContactRow icon={MessageCircle} label="WhatsApp" value="+351 910 000 000" href="https://wa.me/351910000000" />
-            <ContactRow icon={MapPin} label="Sede" value="Estrada Nacional 1, Lisboa · Portugal" />
-          </div>
         </div>
 
-        <form className="md:col-span-7 bg-surface p-8 md:p-12 border border-border">
-          <div className="grid md:grid-cols-2 gap-6">
-            <Field label="Nome" name="name" />
-            <Field label="Empresa / Município" name="company" />
-            <Field label="Email" name="email" type="email" />
-            <Field label="Telefone" name="phone" type="tel" />
-            <div className="md:col-span-2">
-              <label className="block text-xs eyebrow mb-2">Tipo de projeto</label>
-              <select className="w-full bg-background border border-border px-4 py-3 text-sm focus:outline-none focus:border-primary">
-                <option>Festival</option>
-                <option>Concerto</option>
-                <option>Evento corporativo</option>
-                <option>Festa municipal</option>
-                <option>Aluguer de equipamentos</option>
-                <option>Gestão de bares</option>
-                <option>Booking de artistas</option>
-                <option>Outro</option>
-              </select>
+        <div className="grid md:grid-cols-3 gap-px bg-border border border-border mb-16">
+          {contacts.map((c) => (
+            <div key={c.name} className="bg-background p-8 md:p-10 flex flex-col">
+              <div className="eyebrow mb-4 text-primary">{c.area}</div>
+              <div className="font-display font-black text-2xl md:text-3xl mb-6">{c.name}</div>
+              <a href={c.phoneHref} className="flex items-center gap-3 mb-3 group">
+                <Phone className="h-4 w-4 text-primary shrink-0" />
+                <span className="text-sm md:text-base group-hover:text-primary transition-colors">{c.phone}</span>
+              </a>
+              <a href={`mailto:${c.email}`} className="flex items-center gap-3 group">
+                <Mail className="h-4 w-4 text-primary shrink-0" />
+                <span className="text-sm break-all group-hover:text-primary transition-colors">{c.email}</span>
+              </a>
             </div>
-            <div className="md:col-span-2">
-              <label className="block text-xs eyebrow mb-2">Descreva o seu evento</label>
-              <textarea
-                rows={5}
-                className="w-full bg-background border border-border px-4 py-3 text-sm focus:outline-none focus:border-primary resize-none"
-                placeholder="Datas, localização, público estimado, serviços necessários..."
-              />
+          ))}
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-6 border-t border-border pt-10">
+          <div className="flex items-start gap-4">
+            <div className="h-12 w-12 border border-border flex items-center justify-center shrink-0">
+              <MapPin className="h-5 w-5 text-primary" />
+            </div>
+            <div>
+              <div className="eyebrow mb-1">Sede</div>
+              <div className="font-display font-bold text-base">Paredes de Coura · Portugal</div>
+              <div className="text-sm text-muted-foreground mt-1">Com atuação em todo o país.</div>
             </div>
           </div>
-          <button type="button" className="btn-primary mt-8 w-full md:w-auto justify-center">
-            Enviar Pedido <ArrowRight className="h-4 w-4" />
-          </button>
-        </form>
+          <div className="flex items-start gap-4">
+            <div className="h-12 w-12 border border-border flex items-center justify-center shrink-0">
+              <MessageCircle className="h-5 w-5 text-primary" />
+            </div>
+            <div>
+              <div className="eyebrow mb-1">Prefere WhatsApp?</div>
+              <div className="text-sm text-muted-foreground">Envie mensagem para qualquer um dos números acima.</div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
@@ -779,13 +713,13 @@ function Footer() {
             <span className="font-display font-black tracking-widest">EVENTUALIDADES</span>
           </div>
           <p className="text-sm text-muted-foreground max-w-xs">
-            Produção integral de eventos. Há mais de 30 anos a montar palco em Portugal.
+            Produção integral de eventos. Há mais de 20 anos a montar palco em Portugal.
           </p>
         </div>
         <FooterCol title="Serviços" links={["Produção", "Equipamentos", "Gestão de Bares", "Agenciamento", "Produção Técnica"]} />
-        <FooterCol title="Empresa" links={["Sobre", "Equipa", "Notícias", "Carreiras"]} />
+        <FooterCol title="Empresa" links={["Sobre", "Equipa", "Parceiros", "Carreiras"]} />
         <FooterCol title="Portfólio" links={["Festivais", "Concertos", "Corporate", "Municipal"]} />
-        <FooterCol title="Contactos" links={["+351 210 000 000", "geral@palco.pt", "Lisboa · Portugal"]} />
+        <FooterCol title="Contactos" links={["+351 933 818 311", "catarinavieira@eventualidades.pt", "Paredes de Coura · Portugal"]} />
       </div>
       <div className="border-t border-border">
         <div className="container-x py-6 flex flex-wrap items-center justify-between gap-4 text-xs text-muted-foreground">
