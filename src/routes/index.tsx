@@ -106,17 +106,16 @@ const services = [
     kicker: "02",
     title: "Aluguer de Equipamentos",
     lede: "Disponibilizamos equipamento profissional para qualquer dimensão de evento.",
-    image: stageEquipment,
-    items: ["Som", "Iluminação", "Vídeo LED", "Estruturas Truss", "Palcos", "Backline", "Torres de Delay", "Geradores", "Cablagem", "Distribuição elétrica", "Mesas e cadeiras"],
+    image: vbfPalcoRoxo.url,
+    items: ["Som", "Iluminação", "Vídeo LED", "Estruturas Truss", "Palcos", "Backline", "Torres de Delay", "Geradores", "Cablagem", "Distribuição elétrica", "Mesas e cadeiras", "Zona Kids LEGO", "Camarins", "WC's", "Efeitos e Pirotecnia"],
     icon: Speaker,
-    cta: "Ver Catálogo",
   },
   {
     id: "bares",
     kicker: "03",
     title: "Gestão de Bares",
     lede: "Gerimos bares em festivais e grandes eventos, assegurando toda a operação.",
-    image: bars,
+    image: vbfLuzes.url,
     items: ["Recursos Humanos", "Stock", "Logística", "POS", "Copos reutilizáveis", "Equipamentos", "Coordenação", "Licenciamento"],
     icon: Beer,
   },
@@ -126,38 +125,23 @@ const services = [
     title: "Agenciamento Artístico",
     lede: "Representamos artistas e ligamos promotores, municípios e agentes internacionais.",
     image: artist,
-    items: ["Booking", "Management", "Digressões", "Contratação", "Produção técnica"],
+    items: ["Booking", "Management", "Contratação", "Produção técnica"],
     icon: Music2,
   },
 ];
 
 const projects = [
-  { name: "Amadora Beer Fest", year: "2024", img: project1, tag: "Festival" },
-  { name: "Festival Paredes de Coura", year: "2024", img: project2, tag: "Festival" },
-  { name: "Rock in Rio Lisboa", year: "2024", img: project3, tag: "Grande Produção" },
-  { name: "Funchal Jazz Festival", year: "2023", img: project4, tag: "Festival" },
-  { name: "Eventos Corporativos", year: "2024", img: project5, tag: "Corporate" },
-  { name: "Festas Municipais", year: "2024", img: project6, tag: "Município" },
+  { name: "Viana Bate Forte", year: "2025", img: vbfAerial.url, tag: "Festival" },
+  { name: "Amadora Beer Fest", year: "2026", img: null, tag: "Festival" },
+  { name: "Festas da Cidade de Chaves", year: "2026", img: null, tag: "Município" },
 ];
 
-const clients = ["Município de Lisboa", "Câmara do Porto", "Super Bock", "Sagres", "MEO", "NOS", "RTP", "SIC", "TVI", "Everything is New", "Música no Coração", "Live Nation"];
-
-const testimonials = [
-  {
-    quote: "Uma equipa que compreende a exigência de um festival. Executam tudo com precisão milimétrica.",
-    author: "João Ferreira",
-    role: "Diretor, Festival XYZ",
-  },
-  {
-    quote: "Trabalham como se o evento fosse deles. É o parceiro técnico que qualquer produtor procura.",
-    author: "Marta Sousa",
-    role: "Câmara Municipal",
-  },
-  {
-    quote: "Do palco ao bar, tudo funcionou sem falhas. Voltámos a contratar no ano seguinte.",
-    author: "Ricardo Nunes",
-    role: "Head of Events, Marca Nacional",
-  },
+const partners = [
+  { name: "Mutant Melody", role: "Som" },
+  { name: "Publivez", role: "Publicidade" },
+  { name: "Segurvez", role: "Segurança" },
+  { name: "F&R Som", role: "Som" },
+  { name: "BrandPrint", role: "Impressão" },
 ];
 
 function Home() {
