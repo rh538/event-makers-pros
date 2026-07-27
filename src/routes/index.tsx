@@ -717,9 +717,9 @@ function Footer() {
           </p>
         </div>
         <FooterCol title="Serviços" links={["Produção", "Equipamentos", "Gestão de Bares", "Agenciamento", "Produção Técnica"]} />
-        <FooterCol title="Empresa" links={["Sobre", "Equipa", "Notícias", "Carreiras"]} />
+        <FooterCol title="Empresa" links={["Sobre", "Equipa", "Parceiros", "Carreiras"]} />
         <FooterCol title="Portfólio" links={["Festivais", "Concertos", "Corporate", "Municipal"]} />
-        <FooterCol title="Contactos" links={["+351 210 000 000", "geral@palco.pt", "Lisboa · Portugal"]} />
+        <FooterCol title="Contactos" links={["+351 933 818 311", "catarinavieira@eventualidades.pt", "Paredes de Coura · Portugal"]} />
       </div>
       <div className="border-t border-border">
         <div className="container-x py-6 flex flex-wrap items-center justify-between gap-4 text-xs text-muted-foreground">
