@@ -521,7 +521,7 @@ function Projects() {
 
 function WhyUs() {
   const reasons = [
-    { n: "01", t: "30+ anos de experiência", d: "Três décadas a montar e desmontar palcos por Portugal e Europa." },
+    { n: "01", t: "20+ anos de experiência", d: "Duas décadas a montar e desmontar palcos por Portugal e Europa." },
     { n: "02", t: "Equipa especializada", d: "Técnicos, produtores e gestores com pedigree em grandes festivais." },
     { n: "03", t: "Equipamentos próprios", d: "Parque técnico atualizado, som, luz, vídeo e estruturas." },
     { n: "04", t: "Cobertura nacional", d: "Do Algarve ao Minho, Açores e Madeira incluídos." },
