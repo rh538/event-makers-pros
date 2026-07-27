@@ -713,7 +713,7 @@ function Footer() {
             <span className="font-display font-black tracking-widest">EVENTUALIDADES</span>
           </div>
           <p className="text-sm text-muted-foreground max-w-xs">
-            Produção integral de eventos. Há mais de 30 anos a montar palco em Portugal.
+            Produção integral de eventos. Há mais de 20 anos a montar palco em Portugal.
           </p>
         </div>
         <FooterCol title="Serviços" links={["Produção", "Equipamentos", "Gestão de Bares", "Agenciamento", "Produção Técnica"]} />
