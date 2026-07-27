@@ -492,28 +492,31 @@ function Projects() {
         </div>
 
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-          {projects.map((p) => (
-            <a key={p.name} href="#contactos" className="group relative aspect-[4/5] overflow-hidden bg-background">
-              <img
-                src={p.img}
-                alt={p.name}
-                width={1200}
-                height={900}
-                loading="lazy"
-                className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-              />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+          {projects.slice(1).map((p) => (
+            <div key={p.name} className="group relative aspect-[4/5] overflow-hidden bg-background border border-border">
+              {p.img ? (
+                <img
+                  src={p.img}
+                  alt={p.name}
+                  width={1200}
+                  height={900}
+                  loading="lazy"
+                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+              ) : (
+                <div className="absolute inset-0 flex items-center justify-center bg-surface">
+                  <span className="text-xs eyebrow text-muted-foreground">Fotos em breve</span>
+                </div>
+              )}
               <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
               <div className="absolute inset-x-0 bottom-0 p-6">
                 <div className="text-xs eyebrow mb-2">{p.tag} · {p.year}</div>
-                <h3 className="font-display font-black text-xl md:text-2xl leading-tight group-hover:text-primary transition-colors">
+                <h3 className="font-display font-black text-xl md:text-2xl leading-tight">
                   {p.name}
                 </h3>
               </div>
-              <div className="absolute top-6 right-6 h-10 w-10 border border-border rounded-full flex items-center justify-center bg-background/40 backdrop-blur-sm group-hover:bg-primary group-hover:border-primary transition-all">
-                <ArrowRight className="h-4 w-4 -rotate-45 group-hover:rotate-0 transition-transform" />
-              </div>
-            </a>
+            </div>
           ))}
         </div>
       </div>
