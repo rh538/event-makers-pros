@@ -65,7 +65,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "Produção integral de eventos, aluguer de equipamentos, gestão de bares e representação artística. 30+ anos de experiência.",
+          "Produção integral de eventos, aluguer de equipamentos, gestão de bares e representação artística. 20+ anos de experiência.",
       },
       { property: "og:image", content: heroImageUrl },
       { name: "twitter:card", content: "summary_large_image" },
