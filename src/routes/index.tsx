@@ -595,58 +595,81 @@ function Partners() {
 
 
 function Contact() {
+  const contacts = [
+    {
+      area: "Produção · Agenciamento",
+      name: "Catarina Vieira",
+      phone: "+351 933 818 311",
+      phoneHref: "tel:+351933818311",
+      email: "catarinavieira@eventualidades.pt",
+    },
+    {
+      area: "Palcos · Som · Luz",
+      name: "João Moreira",
+      phone: "+351 913 536 646",
+      phoneHref: "tel:+351913536646",
+      email: "joaomoreira@eventualidades.pt",
+    },
+    {
+      area: "Gestão de Bares",
+      name: "João Paulo Viana",
+      phone: "+351 926 361 445",
+      phoneHref: "tel:+351926361445",
+      email: "joaoviana@eventualidades.pt",
+    },
+  ];
   return (
     <section id="contactos" className="py-24 md:py-36">
-      <div className="container-x grid md:grid-cols-12 gap-12">
-        <div className="md:col-span-5">
+      <div className="container-x">
+        <div className="max-w-3xl mb-16">
           <div className="eyebrow mb-6">Contactos</div>
           <h2 className="heading-lg mb-8">
             Vamos montar<br />
-            <span className="text-primary">o próximo palco.</span>
+            <span className="text-primary">o próximo palco?</span>
           </h2>
-          <p className="text-muted-foreground text-lg mb-10">
-            Responda em algumas linhas ao que precisa. Voltamos com um orçamento em 48 horas.
+          <p className="text-muted-foreground text-lg">
+            Fale diretamente com a pessoa certa. Voltamos com um orçamento em 48 horas.
           </p>
-          <div className="space-y-5">
-            <ContactRow icon={Phone} label="Telefone" value="+351 210 000 000" href="tel:+351210000000" />
-            <ContactRow icon={Mail} label="Email" value="geral@palco.pt" href="mailto:geral@palco.pt" />
-            <ContactRow icon={MessageCircle} label="WhatsApp" value="+351 910 000 000" href="https://wa.me/351910000000" />
-            <ContactRow icon={MapPin} label="Sede" value="Estrada Nacional 1, Lisboa · Portugal" />
-          </div>
         </div>
 
-        <form className="md:col-span-7 bg-surface p-8 md:p-12 border border-border">
-          <div className="grid md:grid-cols-2 gap-6">
-            <Field label="Nome" name="name" />
-            <Field label="Empresa / Município" name="company" />
-            <Field label="Email" name="email" type="email" />
-            <Field label="Telefone" name="phone" type="tel" />
-            <div className="md:col-span-2">
-              <label className="block text-xs eyebrow mb-2">Tipo de projeto</label>
-              <select className="w-full bg-background border border-border px-4 py-3 text-sm focus:outline-none focus:border-primary">
-                <option>Festival</option>
-                <option>Concerto</option>
-                <option>Evento corporativo</option>
-                <option>Festa municipal</option>
-                <option>Aluguer de equipamentos</option>
-                <option>Gestão de bares</option>
-                <option>Booking de artistas</option>
-                <option>Outro</option>
-              </select>
+        <div className="grid md:grid-cols-3 gap-px bg-border border border-border mb-16">
+          {contacts.map((c) => (
+            <div key={c.name} className="bg-background p-8 md:p-10 flex flex-col">
+              <div className="eyebrow mb-4 text-primary">{c.area}</div>
+              <div className="font-display font-black text-2xl md:text-3xl mb-6">{c.name}</div>
+              <a href={c.phoneHref} className="flex items-center gap-3 mb-3 group">
+                <Phone className="h-4 w-4 text-primary shrink-0" />
+                <span className="text-sm md:text-base group-hover:text-primary transition-colors">{c.phone}</span>
+              </a>
+              <a href={`mailto:${c.email}`} className="flex items-center gap-3 group">
+                <Mail className="h-4 w-4 text-primary shrink-0" />
+                <span className="text-sm break-all group-hover:text-primary transition-colors">{c.email}</span>
+              </a>
             </div>
-            <div className="md:col-span-2">
-              <label className="block text-xs eyebrow mb-2">Descreva o seu evento</label>
-              <textarea
-                rows={5}
-                className="w-full bg-background border border-border px-4 py-3 text-sm focus:outline-none focus:border-primary resize-none"
-                placeholder="Datas, localização, público estimado, serviços necessários..."
-              />
+          ))}
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-6 border-t border-border pt-10">
+          <div className="flex items-start gap-4">
+            <div className="h-12 w-12 border border-border flex items-center justify-center shrink-0">
+              <MapPin className="h-5 w-5 text-primary" />
+            </div>
+            <div>
+              <div className="eyebrow mb-1">Sede</div>
+              <div className="font-display font-bold text-base">Paredes de Coura · Portugal</div>
+              <div className="text-sm text-muted-foreground mt-1">Com atuação em todo o país.</div>
             </div>
           </div>
-          <button type="button" className="btn-primary mt-8 w-full md:w-auto justify-center">
-            Enviar Pedido <ArrowRight className="h-4 w-4" />
-          </button>
-        </form>
+          <div className="flex items-start gap-4">
+            <div className="h-12 w-12 border border-border flex items-center justify-center shrink-0">
+              <MessageCircle className="h-5 w-5 text-primary" />
+            </div>
+            <div>
+              <div className="eyebrow mb-1">Prefere WhatsApp?</div>
+              <div className="text-sm text-muted-foreground">Envie mensagem para qualquer um dos números acima.</div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
