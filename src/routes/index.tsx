@@ -288,7 +288,7 @@ function About() {
         <div className="md:col-span-4">
           <div className="eyebrow mb-6">Quem Somos</div>
           <h2 className="heading-lg">
-            Três décadas<br />
+            Duas décadas<br />
             <span className="text-primary">a montar palco.</span>
           </h2>
         </div>
@@ -297,11 +297,11 @@ function About() {
             Uma empresa especializada na <span className="text-foreground font-medium">produção integral de eventos</span>, aluguer de equipamentos audiovisuais, gestão de bares e representação artística.
           </p>
           <p>
-            Ao longo de mais de três décadas participámos na produção de alguns dos maiores eventos nacionais, desenvolvendo soluções técnicas e logísticas adaptadas a cada projeto.
+            Ao longo de mais de duas décadas participámos na produção de alguns dos maiores eventos nacionais, desenvolvendo soluções técnicas e logísticas adaptadas a cada projeto.
           </p>
           <div className="hair mt-10" />
           <div className="grid grid-cols-2 gap-6 pt-4">
-            <Stat icon={Calendar} label="Anos de operação" value="30+" />
+            <Stat icon={Calendar} label="Anos de operação" value="20+" />
             <Stat icon={Users} label="Profissionais" value="120+" />
             <Stat icon={Award} label="Grandes festivais" value="80+" />
             <Stat icon={Zap} label="Equipamentos próprios" value="Sim" />
