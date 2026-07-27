@@ -407,11 +407,6 @@ function Services() {
                       </li>
                     ))}
                   </ul>
-                  {s.cta && (
-                    <a href="#contactos" className="btn-ghost !py-3 !px-5 !text-xs">
-                      {s.cta} <ArrowRight className="h-3.5 w-3.5" />
-                    </a>
-                  )}
                 </div>
               </article>
             );
