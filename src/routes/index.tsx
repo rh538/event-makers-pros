@@ -557,62 +557,35 @@ function WhyUs() {
   );
 }
 
-function Clients() {
+function Partners() {
   return (
-    <section className="py-20 border-y border-border bg-surface">
+    <section className="py-20 md:py-24 border-y border-border bg-surface">
       <div className="container-x">
-        <div className="text-center mb-10">
-          <div className="eyebrow">Clientes · Municípios · Marcas · Festivais</div>
-        </div>
-        <div className="flex flex-wrap justify-center gap-x-10 gap-y-4 mb-16">
-          {clients.map((c) => (
-            <span key={c} className="font-display font-bold text-sm md:text-base text-muted-foreground hover:text-foreground transition-colors">
-              {c}
-            </span>
-          ))}
-        </div>
-
-        <div className="pt-10 border-t border-border">
-          <div className="text-center mb-8">
-            <div className="eyebrow">Parceiros Técnicos</div>
-          </div>
-          <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-6">
-            <div className="flex flex-col items-center gap-3">
-              <img
-                src={mutantMelodyAsset.url}
-                alt="Mutant Melody"
-                className="h-20 md:h-24 w-auto object-contain"
-                loading="lazy"
-              />
-              <span className="text-xs uppercase tracking-widest text-muted-foreground">Som · Sound Partner</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function Testimonials() {
-  return (
-    <section className="py-24 md:py-36">
-      <div className="container-x">
-        <div className="max-w-3xl mb-16">
-          <div className="eyebrow mb-6">Testemunhos</div>
-          <h2 className="heading-lg">
-            A palavra fica<br /><span className="text-primary">para quem confia.</span>
+        <div className="text-center mb-12">
+          <div className="eyebrow mb-4">Parceiros Técnicos</div>
+          <h2 className="heading-lg !text-3xl md:!text-4xl">
+            Ao lado dos <span className="text-primary">melhores.</span>
           </h2>
         </div>
-        <div className="grid md:grid-cols-3 gap-6">
-          {testimonials.map((t) => (
-            <blockquote key={t.author} className="border border-border p-8 md:p-10 bg-surface flex flex-col">
-              <div className="text-primary text-4xl font-display font-black mb-4 leading-none">"</div>
-              <p className="text-foreground leading-relaxed flex-1">{t.quote}</p>
-              <footer className="mt-6 pt-6 border-t border-border">
-                <div className="font-display font-bold text-sm">{t.author}</div>
-                <div className="text-xs text-muted-foreground mt-1">{t.role}</div>
-              </footer>
-            </blockquote>
+
+        <div className="flex justify-center mb-12">
+          <div className="flex flex-col items-center gap-3">
+            <img
+              src={mutantMelodyAsset.url}
+              alt="Mutant Melody"
+              className="h-20 md:h-24 w-auto object-contain"
+              loading="lazy"
+            />
+            <span className="text-xs uppercase tracking-widest text-muted-foreground">Som · Sound Partner</span>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-border border border-border">
+          {partners.filter((p) => p.name !== "Mutant Melody").map((p) => (
+            <div key={p.name} className="bg-background p-8 flex flex-col items-center justify-center text-center gap-2 min-h-[120px]">
+              <div className="font-display font-black text-lg md:text-xl tracking-wide">{p.name}</div>
+              <div className="text-xs uppercase tracking-widest text-muted-foreground">{p.role}</div>
+            </div>
           ))}
         </div>
       </div>
@@ -620,42 +593,6 @@ function Testimonials() {
   );
 }
 
-function News() {
-  const items = [
-    { date: "Setembro 2025", title: "Amadora Beer Fest — nova edição, novo palco principal", tag: "Festival" },
-    { date: "Agosto 2025", title: "Digressão Nacional — 12 municípios, 40 dias de produção", tag: "Digressão" },
-    { date: "Julho 2025", title: "Investimento em novo parque de LED de última geração", tag: "Equipamento" },
-  ];
-  return (
-    <section className="py-24 md:py-32 border-y border-border bg-surface">
-      <div className="container-x">
-        <div className="flex items-end justify-between mb-12 flex-wrap gap-6">
-          <div>
-            <div className="eyebrow mb-4">Notícias</div>
-            <h2 className="heading-lg !text-3xl md:!text-4xl">Últimos eventos</h2>
-          </div>
-          <a href="#contactos" className="text-sm font-display font-bold uppercase tracking-widest text-primary hover:underline">
-            Ver todos →
-          </a>
-        </div>
-        <div className="divide-y divide-border border-y border-border">
-          {items.map((n) => (
-            <a key={n.title} href="#" className="group grid md:grid-cols-12 gap-4 py-8 items-center">
-              <div className="md:col-span-2 text-xs uppercase tracking-widest text-muted-foreground">{n.date}</div>
-              <div className="md:col-span-2 text-xs eyebrow">{n.tag}</div>
-              <div className="md:col-span-7 font-display font-bold text-lg md:text-xl group-hover:text-primary transition-colors">
-                {n.title}
-              </div>
-              <div className="md:col-span-1 md:text-right">
-                <ArrowRight className="h-5 w-5 inline-block text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" />
-              </div>
-            </a>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
 
 function Contact() {
   return (
