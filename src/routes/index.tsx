@@ -58,7 +58,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Há mais de 30 anos a transformar ideias em festivais, concertos e grandes produções. Equipamentos, produção, gestão de bares e agenciamento artístico.",
+          "Há mais de 20 anos a transformar ideias em festivais, concertos e grandes produções. Equipamentos, produção, gestão de bares e agenciamento artístico.",
       },
       { property: "og:type", content: "website" },
       { property: "og:title", content: "Eventualidades — Eventos que ficam na memória" },
