@@ -494,8 +494,36 @@ function Projects() {
         </div>
 
 
+        {/* Featured: Amadora Beer Fest 2026 */}
+        <div className="mb-20 border border-border p-6 md:p-10 bg-background">
+          <div className="flex items-end justify-between mb-8 flex-wrap gap-4">
+            <div>
+              <div className="eyebrow mb-3 text-primary">Em destaque · 2026</div>
+              <h3 className="font-display font-black text-3xl md:text-5xl leading-none">
+                Amadora Beer Fest
+              </h3>
+              <p className="text-muted-foreground mt-3 max-w-xl text-sm md:text-base">
+                Produção de palco, som, luz e operação de bares num dos maiores festivais de cerveja do país.
+              </p>
+            </div>
+            <div className="text-xs eyebrow">Festival</div>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
+            {amadoraBeerFest.map((img) => (
+              <div key={img.src} className="relative overflow-hidden bg-surface aspect-[16/10]">
+                <img
+                  src={img.src}
+                  alt={img.alt}
+                  loading="lazy"
+                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 hover:scale-105"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-          {projects.slice(1).map((p) => (
+          {projects.slice(2).map((p) => (
             <div key={p.name} className="group relative aspect-[4/5] overflow-hidden bg-background border border-border">
               {p.img ? (
                 <img
