@@ -104,7 +104,7 @@ const services = [
     kicker: "01",
     title: "Produção de Eventos",
     lede: "Organizamos eventos chave-na-mão, do conceito à desmontagem.",
-    image: production,
+    image: vbfMultidao.url,
     items: ["Festivais", "Concertos", "Eventos Corporativos", "Feiras", "Congressos", "Galas", "Festas Municipais", "Eventos Privados"],
     icon: Tent,
   },
@@ -122,7 +122,7 @@ const services = [
     kicker: "03",
     title: "Gestão de Bares",
     lede: "Gerimos bares em festivais e grandes eventos, assegurando toda a operação.",
-    image: vbfLuzes.url,
+    image: abfBares.url,
     items: ["Recursos Humanos", "Stock", "Logística", "POS", "Copos reutilizáveis", "Equipamentos", "Coordenação", "Licenciamento"],
     icon: Beer,
   },
@@ -131,7 +131,7 @@ const services = [
     kicker: "04",
     title: "Agenciamento Artístico",
     lede: "Representamos artistas e ligamos promotores, municípios e agentes internacionais.",
-    image: artist,
+    image: vbfBeatriz.url,
     items: ["Booking", "Management", "Contratação", "Produção técnica"],
     icon: Music2,
   },
@@ -226,7 +226,7 @@ function Hero() {
 
       <div className="relative container-x pb-16 md:pb-28 pt-32 w-full">
         <div className="max-w-4xl">
-          <div className="eyebrow mb-6">Since 2005 · Portugal</div>
+          <div className="eyebrow mb-6">Portugal</div>
           <h1 className="heading-xl">
             Produzimos eventos<br />
             que ficam na <span className="text-primary">memória</span>.
