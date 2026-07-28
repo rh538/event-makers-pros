@@ -184,9 +184,9 @@ function Nav() {
           <a href="#sobre" className="hover:text-primary transition-colors">Empresa</a>
           <a href="#contactos" className="hover:text-primary transition-colors">Contactos</a>
         </nav>
-        <a href="#contactos" className="hidden md:inline-flex btn-primary !py-2.5 !px-4 !text-xs">
+        <Link to="/orcamento" className="hidden md:inline-flex btn-primary !py-2.5 !px-4 !text-xs">
           Pedir Orçamento <ArrowRight className="h-3.5 w-3.5" />
-        </a>
+        </Link>
         <button className="md:hidden text-foreground" onClick={() => setOpen(!open)} aria-label="Menu">
           <div className="space-y-1.5">
             <span className="block w-6 h-0.5 bg-foreground" />
@@ -201,9 +201,9 @@ function Nav() {
             <a href="#projetos" onClick={() => setOpen(false)}>Projetos</a>
             <a href="#sobre" onClick={() => setOpen(false)}>Empresa</a>
             <a href="#contactos" onClick={() => setOpen(false)}>Contactos</a>
-            <a href="#contactos" onClick={() => setOpen(false)} className="btn-primary w-full justify-center">
+            <Link to="/orcamento" onClick={() => setOpen(false)} className="btn-primary w-full justify-center">
               Pedir Orçamento
-            </a>
+            </Link>
           </div>
         </div>
       )}
@@ -247,9 +247,9 @@ function Hero() {
           </p>
 
           <div className="mt-10 flex flex-wrap gap-3">
-            <a href="#contactos" className="btn-primary">
+            <Link to="/orcamento" className="btn-primary">
               Pedir Orçamento <ArrowRight className="h-4 w-4" />
-            </a>
+            </Link>
             <a href="#servicos" className="btn-ghost">Ver Serviços</a>
           </div>
         </div>
