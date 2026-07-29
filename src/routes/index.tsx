@@ -155,7 +155,7 @@ const services = [
     kicker: "04",
     title: "Agenciamento Artístico",
     lede: "Representamos artistas e ligamos promotores, municípios e agentes internacionais.",
-    image: vbfBeatriz.url,
+    image: agenciamentoImg.url,
     items: ["Booking", "Management", "Contratação", "Produção técnica"],
     icon: Music2,
   },
