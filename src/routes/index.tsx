@@ -533,32 +533,35 @@ function Projects() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-          {projects.slice(2).map((p) => (
-            <div key={p.name} className="group relative aspect-[4/5] overflow-hidden bg-background border border-border">
-              {p.img ? (
-                <img
-                  src={p.img}
-                  alt={p.name}
-                  width={1200}
-                  height={900}
-                  loading="lazy"
-                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-              ) : (
-                <div className="absolute inset-0 flex items-center justify-center bg-surface">
-                  <span className="text-xs eyebrow text-muted-foreground">Fotos em breve</span>
-                </div>
-              )}
-              <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
-              <div className="absolute inset-x-0 bottom-0 p-6">
-                <div className="text-xs eyebrow mb-2">{p.tag} · {p.year}</div>
-                <h3 className="font-display font-black text-xl md:text-2xl leading-tight">
-                  {p.name}
-                </h3>
-              </div>
+        {/* Featured: Festas da Cidade de Chaves 2026 */}
+        <div className="border border-border p-6 md:p-10 bg-background">
+          <div className="flex items-end justify-between mb-8 flex-wrap gap-4">
+            <div>
+              <div className="eyebrow mb-3 text-primary">Em destaque · 2026</div>
+              <h3 className="font-display font-black text-3xl md:text-5xl leading-none">
+                Festas da Cidade de Chaves
+              </h3>
+              <p className="text-muted-foreground mt-3 max-w-xl text-sm md:text-base">
+                Produção integral de palco, som, luz e estruturas para milhares de pessoas junto ao rio Tâmega.
+              </p>
             </div>
-          ))}
+            <div className="text-xs eyebrow">Município</div>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
+            {chavesFestas.map((img, i) => (
+              <div
+                key={img.src}
+                className={`relative overflow-hidden bg-surface ${i === 0 ? "md:col-span-2 aspect-[21/9]" : "aspect-[16/10]"}`}
+              >
+                <img
+                  src={img.src}
+                  alt={img.alt}
+                  loading="lazy"
+                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 hover:scale-105"
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
