@@ -612,9 +612,8 @@ function Partners() {
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-border border border-border">
           {partners.filter((p) => p.name !== "Mutant Melody").map((p) => (
-            <div key={p.name} className="bg-background p-8 flex flex-col items-center justify-center text-center gap-2 min-h-[120px]">
+            <div key={p.name} className="bg-background p-8 flex items-center justify-center text-center min-h-[120px]">
               <div className="font-display font-black text-lg md:text-xl tracking-wide">{p.name}</div>
-              <div className="text-xs uppercase tracking-widest text-muted-foreground">{p.role}</div>
             </div>
           ))}
         </div>
