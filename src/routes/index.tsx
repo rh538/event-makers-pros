@@ -41,14 +41,18 @@ import vbfLuzes from "@/assets/vbf-luzes-rua.webp.asset.json";
 import vbfMultidao from "@/assets/vbf-aerial-multidao.webp.asset.json";
 import abfPalco from "@/assets/abf-palco.jpg.asset.json";
 import abfBares from "@/assets/abf-bares.jpg.asset.json";
-import chaves1 from "@/assets/chaves-1.jpg.asset.json";
-import chaves2 from "@/assets/chaves-2.jpg.asset.json";
-import chaves3 from "@/assets/chaves-3.jpg.asset.json";
-import chaves4 from "@/assets/chaves-4.jpg.asset.json";
+import abfCopo from "@/assets/abf-copo.jpg.asset.json";
+import abfNoite from "@/assets/abf-noite.jpg.asset.json";
+import abfConcerto from "@/assets/abf-concerto.jpg.asset.json";
+import abfBanda from "@/assets/abf-banda.jpg.asset.json";
+import vbf2025a from "@/assets/vbf-2025-a.jpg.asset.json";
+import vbf2025b from "@/assets/vbf-2025-b.jpg.asset.json";
 
 const vianaBateForte = [
-  { src: vbfAerial.url, alt: "Vista aérea do palco Viana Bate Forte 2026" },
+  { src: vbfAerial.url, alt: "Vista aérea do palco Viana Bate Forte 2025" },
+  { src: vbf2025a.url, alt: "Concerto ao vivo com iluminação cinematográfica no Viana Bate Forte 2025" },
   { src: vbfPalcoRoxo.url, alt: "Palco iluminado a roxo com banda ao vivo" },
+  { src: vbf2025b.url, alt: "Atuação com iluminação âmbar no Viana Bate Forte 2025" },
   { src: vbfBeatriz.url, alt: "Concerto de Beatriz Rosário no Viana Bate Forte" },
   { src: vbfDama.url, alt: "Concerto ao vivo com iluminação verde" },
   { src: vbfLuzes.url, alt: "Iluminação da cidade durante o festival" },
@@ -56,8 +60,12 @@ const vianaBateForte = [
 ];
 
 const amadoraBeerFest = [
+  { src: abfNoite.url, alt: "Vista noturna do recinto do Amadora Beer Fest 2026 com palco e bares" },
+  { src: abfConcerto.url, alt: "Concerto no palco principal do Amadora Beer Fest 2026" },
   { src: abfPalco.url, alt: "Palco principal do Amadora Beer Fest 2026 à noite" },
   { src: abfBares.url, alt: "Zona de bares e food-court do Amadora Beer Fest 2026" },
+  { src: abfBanda.url, alt: "Banda de sopros a animar o Amadora Beer Fest 2026" },
+  { src: abfCopo.url, alt: "Copo reutilizável Amadora com cerveja a ser servida" },
 ];
 
 const chavesFestas = [
