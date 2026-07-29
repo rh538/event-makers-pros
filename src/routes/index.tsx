@@ -41,6 +41,10 @@ import vbfLuzes from "@/assets/vbf-luzes-rua.webp.asset.json";
 import vbfMultidao from "@/assets/vbf-aerial-multidao.webp.asset.json";
 import abfPalco from "@/assets/abf-palco.jpg.asset.json";
 import abfBares from "@/assets/abf-bares.jpg.asset.json";
+import chaves1 from "@/assets/chaves-1.jpg.asset.json";
+import chaves2 from "@/assets/chaves-2.jpg.asset.json";
+import chaves3 from "@/assets/chaves-3.jpg.asset.json";
+import chaves4 from "@/assets/chaves-4.jpg.asset.json";
 
 const vianaBateForte = [
   { src: vbfAerial.url, alt: "Vista aérea do palco Viana Bate Forte 2026" },
@@ -54,6 +58,13 @@ const vianaBateForte = [
 const amadoraBeerFest = [
   { src: abfPalco.url, alt: "Palco principal do Amadora Beer Fest 2026 à noite" },
   { src: abfBares.url, alt: "Zona de bares e food-court do Amadora Beer Fest 2026" },
+];
+
+const chavesFestas = [
+  { src: chaves3.url, alt: "Vista aérea da multidão nas Festas da Cidade de Chaves 2026" },
+  { src: chaves1.url, alt: "Palco à noite com público nas Festas de Chaves" },
+  { src: chaves2.url, alt: "Montagem de palco e torre delay em Chaves" },
+  { src: chaves4.url, alt: "Multidão em concerto noturno nas Festas de Chaves" },
 ];
 
 const heroImageUrl = `https://id-preview--c27d3510-e21e-4bf5-a619-57914eae6833.lovable.app${heroFestival}`;
