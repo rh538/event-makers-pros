@@ -36,6 +36,7 @@ import project6 from "@/assets/project-6.jpg";
 import vbfAerial from "@/assets/vbf-aerial-palco.jpg.asset.json";
 import vbfPalcoRoxo from "@/assets/vbf-palco-roxo.jpg.asset.json";
 import vbfBeatriz from "@/assets/vbf-beatriz-rosario.jpg.asset.json";
+import agenciamentoImg from "@/assets/agenciamento.jpg.asset.json";
 import vbfDama from "@/assets/vbf-dama-verde.jpg.asset.json";
 import vbfLuzes from "@/assets/vbf-luzes-rua.webp.asset.json";
 import vbfMultidao from "@/assets/vbf-aerial-multidao.webp.asset.json";
@@ -154,7 +155,7 @@ const services = [
     kicker: "04",
     title: "Agenciamento Artístico",
     lede: "Representamos artistas e ligamos promotores, municípios e agentes internacionais.",
-    image: vbfBeatriz.url,
+    image: agenciamentoImg.url,
     items: ["Booking", "Management", "Contratação", "Produção técnica"],
     icon: Music2,
   },
