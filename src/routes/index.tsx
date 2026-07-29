@@ -47,6 +47,10 @@ import abfConcerto from "@/assets/abf-concerto.jpg.asset.json";
 import abfBanda from "@/assets/abf-banda.jpg.asset.json";
 import vbf2025a from "@/assets/vbf-2025-a.jpg.asset.json";
 import vbf2025b from "@/assets/vbf-2025-b.jpg.asset.json";
+import chaves1 from "@/assets/chaves-1.jpg.asset.json";
+import chaves2 from "@/assets/chaves-2.jpg.asset.json";
+import chaves3 from "@/assets/chaves-3.jpg.asset.json";
+import chaves4 from "@/assets/chaves-4.jpg.asset.json";
 
 const vianaBateForte = [
   { src: vbfAerial.url, alt: "Vista aérea do palco Viana Bate Forte 2025" },
