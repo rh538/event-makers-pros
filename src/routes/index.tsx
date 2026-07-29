@@ -41,6 +41,10 @@ import vbfLuzes from "@/assets/vbf-luzes-rua.webp.asset.json";
 import vbfMultidao from "@/assets/vbf-aerial-multidao.webp.asset.json";
 import abfPalco from "@/assets/abf-palco.jpg.asset.json";
 import abfBares from "@/assets/abf-bares.jpg.asset.json";
+import chaves1 from "@/assets/chaves-1.jpg.asset.json";
+import chaves2 from "@/assets/chaves-2.jpg.asset.json";
+import chaves3 from "@/assets/chaves-3.jpg.asset.json";
+import chaves4 from "@/assets/chaves-4.jpg.asset.json";
 
 const vianaBateForte = [
   { src: vbfAerial.url, alt: "Vista aérea do palco Viana Bate Forte 2026" },
@@ -54,6 +58,13 @@ const vianaBateForte = [
 const amadoraBeerFest = [
   { src: abfPalco.url, alt: "Palco principal do Amadora Beer Fest 2026 à noite" },
   { src: abfBares.url, alt: "Zona de bares e food-court do Amadora Beer Fest 2026" },
+];
+
+const chavesFestas = [
+  { src: chaves3.url, alt: "Vista aérea da multidão nas Festas da Cidade de Chaves 2026" },
+  { src: chaves1.url, alt: "Palco à noite com público nas Festas de Chaves" },
+  { src: chaves2.url, alt: "Montagem de palco e torre delay em Chaves" },
+  { src: chaves4.url, alt: "Multidão em concerto noturno nas Festas de Chaves" },
 ];
 
 const heroImageUrl = `https://id-preview--c27d3510-e21e-4bf5-a619-57914eae6833.lovable.app${heroFestival}`;
@@ -522,32 +533,35 @@ function Projects() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-          {projects.slice(2).map((p) => (
-            <div key={p.name} className="group relative aspect-[4/5] overflow-hidden bg-background border border-border">
-              {p.img ? (
-                <img
-                  src={p.img}
-                  alt={p.name}
-                  width={1200}
-                  height={900}
-                  loading="lazy"
-                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-              ) : (
-                <div className="absolute inset-0 flex items-center justify-center bg-surface">
-                  <span className="text-xs eyebrow text-muted-foreground">Fotos em breve</span>
-                </div>
-              )}
-              <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
-              <div className="absolute inset-x-0 bottom-0 p-6">
-                <div className="text-xs eyebrow mb-2">{p.tag} · {p.year}</div>
-                <h3 className="font-display font-black text-xl md:text-2xl leading-tight">
-                  {p.name}
-                </h3>
-              </div>
+        {/* Featured: Festas da Cidade de Chaves 2026 */}
+        <div className="border border-border p-6 md:p-10 bg-background">
+          <div className="flex items-end justify-between mb-8 flex-wrap gap-4">
+            <div>
+              <div className="eyebrow mb-3 text-primary">Em destaque · 2026</div>
+              <h3 className="font-display font-black text-3xl md:text-5xl leading-none">
+                Festas da Cidade de Chaves
+              </h3>
+              <p className="text-muted-foreground mt-3 max-w-xl text-sm md:text-base">
+                Produção integral de palco, som, luz e estruturas para milhares de pessoas junto ao rio Tâmega.
+              </p>
             </div>
-          ))}
+            <div className="text-xs eyebrow">Município</div>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
+            {chavesFestas.map((img, i) => (
+              <div
+                key={img.src}
+                className={`relative overflow-hidden bg-surface ${i === 0 ? "md:col-span-2 aspect-[21/9]" : "aspect-[16/10]"}`}
+              >
+                <img
+                  src={img.src}
+                  alt={img.alt}
+                  loading="lazy"
+                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 hover:scale-105"
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
