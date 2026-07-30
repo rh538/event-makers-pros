@@ -650,11 +650,11 @@ function Partners() {
 function Contact() {
   const contacts = [
     {
-      area: "Produção · Agenciamento",
-      name: "Catarina Vieira",
-      phone: "+351 933 818 311",
-      phoneHref: "tel:+351933818311",
-      email: "catarinavieira@eventualidades.pt",
+      area: "Gestão de Bares",
+      name: "João Paulo Viana",
+      phone: "+351 926 361 445",
+      phoneHref: "tel:+351926361445",
+      email: "joaoviana@eventualidades.pt",
     },
     {
       area: "Palcos · Som · Luz",
@@ -664,11 +664,11 @@ function Contact() {
       email: "joaomoreira@eventualidades.pt",
     },
     {
-      area: "Gestão de Bares",
-      name: "João Paulo Viana",
-      phone: "+351 926 361 445",
-      phoneHref: "tel:+351926361445",
-      email: "joaoviana@eventualidades.pt",
+      area: "Produção · Agenciamento",
+      name: "Catarina Vieira",
+      phone: "+351 933 818 311",
+      phoneHref: "tel:+351933818311",
+      email: "catarinavieira@eventualidades.pt",
     },
   ];
   return (
