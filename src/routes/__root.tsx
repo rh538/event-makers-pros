@@ -74,45 +74,37 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
-  title: "Eventualidades | Produção de Eventos, Festivais e Aluguer de Equipamentos",
+  title: "Eventualidades | Produção de Eventos, Festivais, Equipamentos e Gestão de Bares",
 
   meta: [
     { charSet: "utf-8" },
     { name: "viewport", content: "width=device-width, initial-scale=1" },
-    { name: "theme-color", content: "#111111" },
 
     {
       name: "description",
       content:
-        "A Eventualidades é especialista na produção de festivais, eventos corporativos, concertos e festas. Aluguer de equipamentos, produção técnica, gestão de bares e agenciamento artístico em Portugal.",
+        "Empresa portuguesa especializada na produção de eventos, festivais, aluguer de equipamentos audiovisuais, gestão de bares, artistas e soluções técnicas para eventos.",
     },
 
     {
       name: "keywords",
       content:
-        "produção de eventos, festivais, aluguer de equipamentos, som, iluminação, palcos, gestão de bares, concertos, eventos corporativos, agenciamento artístico, Portugal",
+        "produção de eventos, festivais, aluguer de som, aluguer de luz, palco, gestão de bares, eventos corporativos, equipamento audiovisual, Eventualidades",
     },
 
-    {
-      name: "robots",
-      content: "index,follow",
-    },
+    { name: "author", content: "Eventualidades" },
 
-    {
-      property: "og:type",
-      content: "website",
-    },
-
-    {
-      property: "og:title",
-      content:
-        "Eventualidades | Produção de Eventos, Festivais e Aluguer de Equipamentos",
-    },
+    { property: "og:title", content: "Eventualidades" },
 
     {
       property: "og:description",
       content:
-        "Produção de festivais, concertos, eventos corporativos, gestão de bares e aluguer de equipamentos em todo o país.",
+        "Produzimos eventos inesquecíveis. Festivais, equipamentos, gestão de bares e produção técnica.",
+    },
+
+    {
+      property: "og:image",
+      content: "https://eventualidades.pt/og-image.jpg",
     },
 
     {
@@ -121,13 +113,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     },
 
     {
-      property: "og:site_name",
-      content: "Eventualidades",
-    },
-
-    {
-      property: "og:image",
-      content: "https://eventualidades.pt/og-image.jpg",
+      property: "og:type",
+      content: "website",
     },
 
     {
@@ -143,32 +130,27 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     {
       name: "twitter:description",
       content:
-        "Produção de eventos, festivais, gestão de bares e aluguer de equipamentos.",
+        "Produção de eventos, festivais e soluções técnicas.",
     },
 
     {
-      name: "twitter:image",
-      content: "https://eventualidades.pt/og-image.jpg",
+      name: "theme-color",
+      content: "#111111",
     },
   ],
 
   links: [
-    { rel: "canonical", href: "https://eventualidades.pt" },
-
     { rel: "stylesheet", href: appCss },
-
-    { rel: "icon", type: "image/png", href: "/favicon.png" },
-
-    { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
+    { rel: "icon", href: "/favicon.png" },
+    { rel: "canonical", href: "https://eventualidades.pt" },
+    { rel: "apple-touch-icon", href: "/favicon.png" },
 
     { rel: "preconnect", href: "https://fonts.googleapis.com" },
-
     {
       rel: "preconnect",
       href: "https://fonts.gstatic.com",
       crossOrigin: "anonymous",
     },
-
     {
       rel: "stylesheet",
       href: "https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Inter:wght@400;500;600&display=swap",
