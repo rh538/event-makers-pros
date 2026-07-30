@@ -47,7 +47,6 @@ import abfNoite from "@/assets/abf-noite.jpg";
 import abfConcerto from "@/assets/abf-concerto.jpg";
 import abfBanda from "@/assets/abf-banda.jpg";
 import vbf2025a from "@/assets/vbf-2025-a.jpg";
-import vbf2025b from "@/assets/vbf-2025-b.jpg";
 import chaves1 from "@/assets/chaves-1.jpg";
 import chaves2 from "@/assets/chaves-2.jpg";
 import chaves3 from "@/assets/chaves-3.jpg";
@@ -57,7 +56,6 @@ const vianaBateForte = [
   { src: vbfAerial, alt: "Vista aérea do palco Viana Bate Forte 2025" },
   { src: vbf2025a, alt: "Concerto ao vivo com iluminação cinematográfica no Viana Bate Forte 2025" },
   { src: vbfPalcoRoxo, alt: "Palco iluminado a roxo com banda ao vivo" },
-  { src: vbf2025b, alt: "Atuação com iluminação âmbar no Viana Bate Forte 2025" },
   { src: vbfBeatriz, alt: "Concerto de Beatriz Rosário no Viana Bate Forte" },
   { src: vbfDama, alt: "Concerto ao vivo com iluminação verde" },
   { src: vbfLuzes, alt: "Iluminação da cidade durante o festival" },
@@ -154,7 +152,7 @@ const services = [
     id: "agenciamento",
     kicker: "04",
     title: "Agenciamento Artístico",
-    lede: "Representamos artistas e ligamos promotores, municípios e agentes internacionais.",
+    lede: "Representamos artistas e ligamos promotores, municípios e agentes.",
     image: agenciamentoImg,
     items: ["Booking", "Management", "Contratação", "Produção técnica"],
     icon: Music2,
@@ -252,8 +250,7 @@ function Hero() {
         <div className="max-w-4xl">
           <div className="eyebrow mb-6">Portugal</div>
           <h1 className="heading-xl">
-            Produzimos eventos<br />
-            que ficam na <span className="text-primary">memória</span>.
+            Produzimos <span className="text-primary">eventos</span>.
           </h1>
 
           <div className="mt-8 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm md:text-base text-muted-foreground font-medium">
@@ -493,7 +490,7 @@ function Projects() {
                 Viana Bate Forte
               </h3>
               <p className="text-muted-foreground mt-3 max-w-xl text-sm md:text-base">
-                Produção integral no coração de Viana do Castelo — palco, som, luz e estruturas.
+                Produção integral no coração de Viana do Castelo.
               </p>
             </div>
             <div className="text-xs eyebrow">Festival · Município</div>
@@ -527,7 +524,7 @@ function Projects() {
                 Amadora Beer Fest
               </h3>
               <p className="text-muted-foreground mt-3 max-w-xl text-sm md:text-base">
-                Produção de palco, som, luz e operação de bares num dos maiores festivais de cerveja do país.
+                Produção integral e operação de bares.
               </p>
             </div>
             <div className="text-xs eyebrow">Festival</div>
@@ -555,7 +552,7 @@ function Projects() {
                 Festas da Cidade de Chaves
               </h3>
               <p className="text-muted-foreground mt-3 max-w-xl text-sm md:text-base">
-                Produção integral de palco, som, luz e estruturas para milhares de pessoas junto ao rio Tâmega.
+                Produção integral para milhares de pessoas junto ao rio Tâmega.
               </p>
             </div>
             <div className="text-xs eyebrow">Município</div>
@@ -583,9 +580,9 @@ function Projects() {
 
 function WhyUs() {
   const reasons = [
-    { n: "01", t: "20+ anos de experiência", d: "Duas décadas a montar e desmontar palcos por Portugal e Europa." },
-    { n: "02", t: "Equipa especializada", d: "Técnicos, produtores e gestores com pedigree em grandes festivais." },
-    { n: "03", t: "Equipamentos próprios", d: "Parque técnico atualizado, som, luz, vídeo e estruturas." },
+    { n: "01", t: "20+ anos de experiência", d: "Duas décadas a montar e desmontar bares e palcos por Portugal e Europa." },
+    { n: "02", t: "Equipa especializada", d: "Técnicos, produtores e gestores em grandes festivais." },
+    { n: "03", t: "Equipamento técnico", d: "Parque técnico atualizado, som, luz, vídeo e estruturas." },
     { n: "04", t: "Cobertura nacional", d: "Do Algarve ao Minho, Açores e Madeira incluídos." },
     { n: "05", t: "Produção chave-na-mão", d: "Um único interlocutor. Um único orçamento. Zero surpresas." },
     { n: "06", t: "Resposta rápida", d: "Emergências, réplicas, alterações de última hora. Resolvemos." },
