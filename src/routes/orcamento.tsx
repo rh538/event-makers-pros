@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { ArrowLeft, Send, CheckCircle2 } from "lucide-react";
-import logoAsset from "@/assets/logo.png.asset.json";
+import logoAsset from "@/assets/logo.png";
 
 export const Route = createFileRoute("/orcamento")({
   head: () => ({
@@ -83,7 +83,7 @@ function OrcamentoPage() {
         <div className="container-x flex items-center justify-between h-16 md:h-20">
           <Link to="/" className="flex items-center gap-3">
             <img
-              src={logoAsset.url}
+              src={logoAsset}
               alt="Eventualidades"
               width={40}
               height={40}
