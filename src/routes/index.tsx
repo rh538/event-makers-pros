@@ -582,10 +582,10 @@ function WhyUs() {
   const reasons = [
     { n: "01", t: "20+ anos de experiência", d: "Duas décadas a montar e desmontar bares e palcos por Portugal e Europa." },
     { n: "02", t: "Equipa especializada", d: "Técnicos, produtores e gestores em grandes festivais." },
-    { n: "03", t: "Equipamento técnico", d: "Parque técnico atualizado, som, luz, vídeo e estruturas." },
+    { n: "03", t: "Equipamento técnico", d: "Parque técnico atualizado, som, luz, LED, vídeo e estruturas." },
     { n: "04", t: "Cobertura nacional", d: "Do Algarve ao Minho, Açores e Madeira incluídos." },
-    { n: "05", t: "Produção chave-na-mão", d: "Um único interlocutor. Um único orçamento. Zero surpresas." },
-    { n: "06", t: "Resposta rápida", d: "Emergências, réplicas, alterações de última hora. Resolvemos." },
+    { n: "05", t: "Produção chave-na-mão", d: "Um único interlocutor. Um único orçamento." },
+    { n: "06", t: "Resposta rápida", d: "Emergências e alterações de última hora. Resolvemos." },
   ];
   return (
     <section className="py-24 md:py-36">
@@ -650,11 +650,11 @@ function Partners() {
 function Contact() {
   const contacts = [
     {
-      area: "Produção · Agenciamento",
-      name: "Catarina Vieira",
-      phone: "+351 933 818 311",
-      phoneHref: "tel:+351933818311",
-      email: "catarinavieira@eventualidades.pt",
+      area: "Gestão de Bares",
+      name: "João Paulo Viana",
+      phone: "+351 926 361 445",
+      phoneHref: "tel:+351926361445",
+      email: "joaoviana@eventualidades.pt",
     },
     {
       area: "Palcos · Som · Luz",
@@ -664,11 +664,11 @@ function Contact() {
       email: "joaomoreira@eventualidades.pt",
     },
     {
-      area: "Gestão de Bares",
-      name: "João Paulo Viana",
-      phone: "+351 926 361 445",
-      phoneHref: "tel:+351926361445",
-      email: "joaoviana@eventualidades.pt",
+      area: "Produção · Agenciamento",
+      name: "Catarina Vieira",
+      phone: "+351 933 818 311",
+      phoneHref: "tel:+351933818311",
+      email: "catarinavieira@eventualidades.pt",
     },
   ];
   return (
