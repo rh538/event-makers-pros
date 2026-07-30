@@ -656,7 +656,7 @@ function Contact() {
       email: "joaoviana@eventualidades.pt",
     },
     {
-      area: "Palcos · Som · Luz",
+      area: "Aluguer de Equipamento · Palcos · Som · Luz",
       name: "João Moreira",
       phone: "+351 913 536 646",
       phoneHref: "tel:+351913536646",
@@ -776,7 +776,7 @@ function Footer() {
         <FooterCol title="Serviços" links={["Produção", "Equipamentos", "Gestão de Bares", "Agenciamento", "Produção Técnica"]} />
         <FooterCol title="Empresa" links={["Sobre", "Equipa", "Parceiros", "Carreiras"]} />
         <FooterCol title="Portfólio" links={["Festivais", "Concertos", "Corporate", "Municipal"]} />
-        <FooterCol title="Contactos" links={["+351 933 818 311", "catarinavieira@eventualidades.pt", "Paredes de Coura · Portugal"]} />
+        <FooterCol title="Sede" links={["Paredes de Coura · Portugal"]} />
       </div>
       <div className="border-t border-border">
         <div className="container-x py-6 flex flex-wrap items-center justify-between gap-4 text-xs text-muted-foreground">
