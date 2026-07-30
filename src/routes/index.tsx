@@ -656,7 +656,7 @@ function Contact() {
       email: "joaoviana@eventualidades.pt",
     },
     {
-      area: "Aluguer de Equipamento · Palcos · Som · Luz",
+      area: "Aluguer de Equipamento · Palcos · Som · Luz · LED ",
       name: "João Moreira",
       phone: "+351 913 536 646",
       phoneHref: "tel:+351913536646",
