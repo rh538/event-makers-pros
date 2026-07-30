@@ -74,22 +74,107 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
-    meta: [
-      { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { name: "theme-color", content: "#111111" },
-    ],
-    links: [
-      { rel: "stylesheet", href: appCss },
-      { rel: "icon", type: "image/png", href: "/favicon.png" },
-      { rel: "preconnect", href: "https://fonts.googleapis.com" },
-      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      {
-        rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Inter:wght@400;500;600&display=swap",
-      },
-    ],
-  }),
+  title: "Eventualidades | Produção de Eventos, Festivais e Aluguer de Equipamentos",
+
+  meta: [
+    { charSet: "utf-8" },
+    { name: "viewport", content: "width=device-width, initial-scale=1" },
+    { name: "theme-color", content: "#111111" },
+
+    {
+      name: "description",
+      content:
+        "A Eventualidades é especialista na produção de festivais, eventos corporativos, concertos e festas. Aluguer de equipamentos, produção técnica, gestão de bares e agenciamento artístico em Portugal.",
+    },
+
+    {
+      name: "keywords",
+      content:
+        "produção de eventos, festivais, aluguer de equipamentos, som, iluminação, palcos, gestão de bares, concertos, eventos corporativos, agenciamento artístico, Portugal",
+    },
+
+    {
+      name: "robots",
+      content: "index,follow",
+    },
+
+    {
+      property: "og:type",
+      content: "website",
+    },
+
+    {
+      property: "og:title",
+      content:
+        "Eventualidades | Produção de Eventos, Festivais e Aluguer de Equipamentos",
+    },
+
+    {
+      property: "og:description",
+      content:
+        "Produção de festivais, concertos, eventos corporativos, gestão de bares e aluguer de equipamentos em todo o país.",
+    },
+
+    {
+      property: "og:url",
+      content: "https://eventualidades.pt",
+    },
+
+    {
+      property: "og:site_name",
+      content: "Eventualidades",
+    },
+
+    {
+      property: "og:image",
+      content: "https://eventualidades.pt/og-image.jpg",
+    },
+
+    {
+      name: "twitter:card",
+      content: "summary_large_image",
+    },
+
+    {
+      name: "twitter:title",
+      content: "Eventualidades",
+    },
+
+    {
+      name: "twitter:description",
+      content:
+        "Produção de eventos, festivais, gestão de bares e aluguer de equipamentos.",
+    },
+
+    {
+      name: "twitter:image",
+      content: "https://eventualidades.pt/og-image.jpg",
+    },
+  ],
+
+  links: [
+    { rel: "canonical", href: "https://eventualidades.pt" },
+
+    { rel: "stylesheet", href: appCss },
+
+    { rel: "icon", type: "image/png", href: "/favicon.png" },
+
+    { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
+
+    { rel: "preconnect", href: "https://fonts.googleapis.com" },
+
+    {
+      rel: "preconnect",
+      href: "https://fonts.gstatic.com",
+      crossOrigin: "anonymous",
+    },
+
+    {
+      rel: "stylesheet",
+      href: "https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Inter:wght@400;500;600&display=swap",
+    },
+  ],
+}),
   shellComponent: RootShell,
   component: RootComponent,
   notFoundComponent: NotFoundComponent,
