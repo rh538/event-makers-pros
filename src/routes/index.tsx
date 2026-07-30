@@ -74,7 +74,6 @@ const amadoraBeerFest = [
 const chavesFestas = [
   { src: chaves3, alt: "Vista aérea da multidão nas Festas da Cidade de Chaves 2026" },
   { src: chaves1, alt: "Palco à noite com público nas Festas de Chaves" },
-  { src: chaves2, alt: "Montagem de palco e torre delay em Chaves" },
   { src: chaves4, alt: "Multidão em concerto noturno nas Festas de Chaves" },
 ];
 
