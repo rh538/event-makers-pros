@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+pimport { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import {
   ArrowRight,
@@ -581,7 +581,7 @@ function WhyUs() {
   const reasons = [
     { n: "01", t: "20+ anos de experiência", d: "Duas décadas a montar e desmontar bares e palcos por Portugal e Europa." },
     { n: "02", t: "Equipa especializada", d: "Técnicos, produtores e gestores em grandes festivais." },
-    { n: "03", t: "Equipamento técnico", d: "Parque técnico atualizado, som, luz, LED, vídeo e estruturas." },
+    { n: "03", t: "Equipamento técnico", d: "Equipamento atualizado, som, luz, LED, vídeo e estruturas." },
     { n: "04", t: "Cobertura nacional", d: "Do Algarve ao Minho, Açores e Madeira incluídos." },
     { n: "05", t: "Produção chave-na-mão", d: "Um único interlocutor. Um único orçamento." },
     { n: "06", t: "Resposta rápida", d: "Emergências e alterações de última hora. Resolvemos." },
