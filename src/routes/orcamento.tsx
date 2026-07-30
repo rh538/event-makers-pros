@@ -83,7 +83,7 @@ function OrcamentoPage() {
         <div className="container-x flex items-center justify-between h-16 md:h-20">
           <Link to="/" className="flex items-center gap-3">
             <img
-              src={logoAsset.url}
+              src={logoAsset}
               alt="Eventualidades"
               width={40}
               height={40}
