@@ -35,9 +35,13 @@ const servicesList = [
   { id: "outro", label: "Outro / Não sei ainda", desc: "Fale connosco e ajudamos a definir." },
 ];
 
+const CONTACT_EMAIL = "catarinavieira@eventualidades.pt";  // Configure em Netlify: Forms → Notifications → adicionar email de notificação
+
 function OrcamentoPage() {
   const [selected, setSelected] = useState<string[]>([]);
   const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const [form, setForm] = useState({
     name: "",
@@ -50,14 +54,49 @@ function OrcamentoPage() {
   });
 
   function toggle(id: string) {
-    setSelected((s) =>
-      s.includes(id) ? s.filter((x) => x !== id) : [...s, id]
-    );
+    setSelected((s) => (s.includes(id) ? s.filter((x) => x !== id) : [...s, id]));
   }
 
-   catch (err) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setError(null);
+    setSending(true);
+
+    const labels = selected
+      .map((id) => servicesList.find((s) => s.id === id)?.label ?? id)
+      .join(", ");
+
+    const body = new URLSearchParams({
+      "form-name": "orcamento",
+      "bot-field": "",
+      subject: `Novo pedido de orçamento — ${form.name}`,
+      services: labels,
+      name: form.name,
+      email: form.email,
+      phone: form.phone,
+      eventDate: form.eventDate,
+      location: form.location,
+      attendees: form.attendees,
+      message: form.message,
+    });
+
+    try {
+      const res = await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: body.toString(),
+      });
+      if (!res.ok) throw new Error(`Netlify Forms respondeu ${res.status}`);
+      setSent(true);
+    } catch (err) {
       console.error(err);
-      alert("Ocorreu um erro ao enviar o formulário.");
+      setError(
+        "Ocorreu um erro ao enviar o formulário. Tente novamente ou escreva-nos para " +
+          CONTACT_EMAIL +
+          ".",
+      );
+    } finally {
+      setSending(false);
     }
   }
 
@@ -77,7 +116,10 @@ function OrcamentoPage() {
               EVENTUALIDADES
             </span>
           </Link>
-          <Link to="/" className="text-sm text-muted-foreground hover:text-primary inline-flex items-center gap-2">
+          <Link
+            to="/"
+            className="text-sm text-muted-foreground hover:text-primary inline-flex items-center gap-2"
+          >
             <ArrowLeft className="h-4 w-4" /> Voltar
           </Link>
         </div>
@@ -86,38 +128,49 @@ function OrcamentoPage() {
       <main className="container-x py-16 md:py-24 max-w-5xl">
         <div className="eyebrow mb-6">Pedir Orçamento</div>
         <h1 className="heading-lg mb-6">
-          Diga-nos o que precisa.<br />
+          Diga-nos o que precisa.
+          <br />
           <span className="text-primary">Voltamos em 48 horas.</span>
         </h1>
         <p className="text-muted-foreground text-lg max-w-2xl mb-12">
-          Escolha os serviços que pretende e preencha os dados do seu evento. A nossa equipa responde com um orçamento personalizado.
+          Escolha os serviços que pretende e preencha os dados do seu evento. A nossa equipa
+          responde com um orçamento personalizado.
         </p>
-         {sent ? (
-  <div className="border border-primary/40 bg-primary/5 p-8 md:p-12 text-center">
-    <CheckCircle2 className="h-12 w-12 text-primary mx-auto mb-4" />
 
-    <h2 className="font-display font-black text-2xl md:text-3xl mb-3">
-      Pedido enviado!
-    </h2>
-
-    <p className="text-muted-foreground">
-      Obrigado pela preferência.
-      <br />
-      Entraremos em contacto consigo no prazo máximo de 48 horas.
-    </p>
-  </div>
-) : (
-  <form
-    name="orcamento"
-    method="POST"
-    data-netlify="true"
-    data-netlify-honeypot="bot-field"
-    onSubmit={handleSubmit}
-    className="space-y-12"
-  >
-    <input type="hidden" name="form-name" value="orcamento" />
-    <input type="hidden" name="bot-field" />
-    <input type="hidden" name="services" value={selected.join(", ")} />
+        {sent ? (
+          <div className="border border-primary/40 bg-primary/5 p-8 md:p-12 text-center">
+            <CheckCircle2 className="h-12 w-12 text-primary mx-auto mb-4" />
+            <h2 className="font-display font-black text-2xl md:text-3xl mb-3">Pedido enviado!</h2>
+            <p className="text-muted-foreground">
+              Obrigado pela preferência.
+              <br />
+              Entraremos em contacto consigo no prazo máximo de 48 horas.
+            </p>
+          </div>
+        ) : (
+          <form
+            name="orcamento"
+            method="POST"
+            action="/"
+            data-netlify="true"
+            data-netlify-honeypot="bot-field"
+            onSubmit={handleSubmit}
+            className="space-y-12"
+          >
+            <input type="hidden" name="form-name" value="orcamento" />
+            <input type="hidden" name="subject" value={`Novo pedido de orçamento — ${form.name}`} />
+            <input
+              type="hidden"
+              name="services"
+              value={selected
+                .map((id) => servicesList.find((s) => s.id === id)?.label ?? id)
+                .join(", ")}
+            />
+            <p className="hidden">
+              <label>
+                Não preencher: <input name="bot-field" />
+              </label>
+            </p>
 
             <section>
               <div className="eyebrow mb-4 text-primary">01 · Que serviços precisa?</div>
@@ -125,14 +178,16 @@ function OrcamentoPage() {
               <div className="grid sm:grid-cols-2 gap-px bg-border border border-border">
                 {servicesList.map((s) => {
                   const active = selected.includes(s.id);
-  return (
+                  return (
                     <button
                       type="button"
                       key={s.id}
                       onClick={() => toggle(s.id)}
                       aria-pressed={active}
                       className={`text-left p-5 md:p-6 transition-colors ${
-                        active ? "bg-primary/10 border-l-2 border-l-primary" : "bg-background hover:bg-surface"
+                        active
+                          ? "bg-primary/10 border-l-2 border-l-primary"
+                          : "bg-background hover:bg-surface"
                       }`}
                     >
                       <div className="flex items-start gap-3">
@@ -215,13 +270,15 @@ function OrcamentoPage() {
               </div>
             </section>
 
+            {error && <p className="text-sm text-destructive">{error}</p>}
+
             <div className="flex flex-wrap items-center gap-4 pt-6 border-t border-border">
               <button
                 type="submit"
-                disabled={selected.length === 0 || !form.name || !form.email}
+                disabled={sending || selected.length === 0 || !form.name || !form.email}
                 className="btn-primary disabled:opacity-40 disabled:cursor-not-allowed"
               >
-                Enviar pedido <Send className="h-4 w-4" />
+                {sending ? "A enviar..." : "Enviar pedido"} <Send className="h-4 w-4" />
               </button>
               <p className="text-xs text-muted-foreground">
                 Ao enviar concorda com o contacto pela equipa Eventualidades.
@@ -229,7 +286,8 @@ function OrcamentoPage() {
             </div>
           </form>
         )}
-          </div>
+      </main>
+    </div>
   );
 }
 
