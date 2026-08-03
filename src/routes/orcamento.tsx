@@ -52,28 +52,22 @@ function OrcamentoPage() {
     setSelected((s) => (s.includes(id) ? s.filter((x) => x !== id) : [...s, id]));
   }
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const chosen = selected
       .map((id) => servicesList.find((s) => s.id === id)?.label)
       .filter(Boolean)
       .join(", ");
-    const subject = `Pedido de orçamento — ${chosen || "Novo pedido"}`;
-    const body = [
-      `Nome: ${form.name}`,
-      `Email: ${form.email}`,
-      `Telefone: ${form.phone}`,
-      `Data do evento: ${form.eventDate}`,
-      `Local: ${form.location}`,
-      `Nº participantes: ${form.attendees}`,
-      `Serviços pretendidos: ${chosen}`,
-      "",
-      "Descrição:",
-      form.message,
-    ].join("\n");
-    window.location.href = `mailto:catarinavieira@eventualidades.pt?subject=${encodeURIComponent(
-      subject,
-    )}&body=${encodeURIComponent(body)}`;
+
+    const formData = new FormData(e.currentTarget);
+    formData.set("services", chosen);
+
+    await fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formData as any).toString(),
+    });
+
     setSent(true);
   }
 
@@ -112,7 +106,7 @@ function OrcamentoPage() {
         {sent ? (
           <div className="border border-primary/40 bg-primary/5 p-8 md:p-12 text-center">
             <CheckCircle2 className="h-12 w-12 text-primary mx-auto mb-4" />
-            <h2 className="font-display font-black text-2xl md:text-3xl mb-3">Pedido pronto a enviar</h2>
+            <h2 className="font-display font-black text-2xl md:text-3xl mb-3">Pedido enviado</h2>
             <p className="text-muted-foreground mb-6">
               Abrimos o seu cliente de email com o pedido preenchido. Se não abriu, envie diretamente para{" "}
               <a href="mailto:catarinavieira@eventualidades.pt" className="text-primary underline">
@@ -125,7 +119,15 @@ function OrcamentoPage() {
             </Link>
           </div>
         ) : (
-          <form onSubmit={handleSubmit} className="space-y-12">
+          <form
+            name="orcamento"
+            method="POST"
+            data-netlify="true"
+            data-netlify-honeypot="bot-field"
+            onSubmit={handleSubmit}
+            className="space-y-12">
+            <input type="hidden" name="form-name" value="orcamento" />
+            <input type="hidden" name="bot-field" />
             <section>
               <div className="eyebrow mb-4 text-primary">01 · Que serviços precisa?</div>
               <p className="text-sm text-muted-foreground mb-6">Selecione um ou vários.</p>
@@ -166,12 +168,14 @@ function OrcamentoPage() {
               <div className="grid md:grid-cols-2 gap-6">
                 <FormField
                   label="Nome*"
+                  name="name"
                   value={form.name}
                   onChange={(v) => setForm({ ...form, name: v })}
                   required
                 />
                 <FormField
                   label="Email*"
+                  name="email"
                   type="email"
                   value={form.email}
                   onChange={(v) => setForm({ ...form, email: v })}
@@ -179,24 +183,28 @@ function OrcamentoPage() {
                 />
                 <FormField
                   label="Telefone"
+                  name="phone"
                   type="tel"
                   value={form.phone}
                   onChange={(v) => setForm({ ...form, phone: v })}
                 />
                 <FormField
                   label="Data do evento"
+                  name="eventDate"
                   type="date"
                   value={form.eventDate}
                   onChange={(v) => setForm({ ...form, eventDate: v })}
                 />
                 <FormField
                   label="Local"
+                  name="location"
                   value={form.location}
                   onChange={(v) => setForm({ ...form, location: v })}
                   placeholder="Cidade / recinto"
                 />
                 <FormField
                   label="Nº aproximado de participantes"
+                  name="attendees"
                   value={form.attendees}
                   onChange={(v) => setForm({ ...form, attendees: v })}
                   placeholder="ex: 2000"
@@ -205,6 +213,7 @@ function OrcamentoPage() {
               <div className="mt-6">
                 <label className="block text-xs eyebrow mb-2">Descreva o seu evento</label>
                 <textarea
+                  name="message"
                   value={form.message}
                   onChange={(e) => setForm({ ...form, message: e.target.value })}
                   rows={6}
@@ -241,6 +250,7 @@ function FormField({
   type = "text",
   required,
   placeholder,
+  name,
 }: {
   label: string;
   value: string;
@@ -248,11 +258,13 @@ function FormField({
   type?: string;
   required?: boolean;
   placeholder?: string;
+  name?: string;
 }) {
   return (
     <div>
       <label className="block text-xs eyebrow mb-2">{label}</label>
       <input
+        name={name}
         type={type}
         value={value}
         onChange={(e) => onChange(e.target.value)}
