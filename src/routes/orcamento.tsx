@@ -108,10 +108,8 @@ function OrcamentoPage() {
             <CheckCircle2 className="h-12 w-12 text-primary mx-auto mb-4" />
             <h2 className="font-display font-black text-2xl md:text-3xl mb-3">Pedido enviado</h2>
             <p className="text-muted-foreground mb-6">
-              Obrigado pela preferência! Entramos em contato dentro de no máximo de 48 horas. 
-              </a>
-              .
-            </p>
+  Obrigado pela preferência. O seu pedido foi enviado com sucesso! Entraremos em contacto consigo no prazo máximo de 48 horas.
+</p>
             <Link to="/" className="btn-ghost inline-flex">
               Voltar ao início
             </Link>
