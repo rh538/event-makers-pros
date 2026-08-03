@@ -108,9 +108,7 @@ function OrcamentoPage() {
             <CheckCircle2 className="h-12 w-12 text-primary mx-auto mb-4" />
             <h2 className="font-display font-black text-2xl md:text-3xl mb-3">Pedido enviado</h2>
             <p className="text-muted-foreground mb-6">
-              Abrimos o seu cliente de email com o pedido preenchido. Se não abriu, envie diretamente para{" "}
-              <a href="mailto:catarinavieira@eventualidades.pt" className="text-primary underline">
-                catarinavieira@eventualidades.pt
+              Obrigado pela preferência! Entramos em contato dentro de no máximo de 48 horas. 
               </a>
               .
             </p>
@@ -128,6 +126,7 @@ function OrcamentoPage() {
             className="space-y-12">
             <input type="hidden" name="form-name" value="orcamento" />
             <input type="hidden" name="bot-field" />
+            <input type="hidden" name="services" value={selected.join(", ")} />
             <section>
               <div className="eyebrow mb-4 text-primary">01 · Que serviços precisa?</div>
               <p className="text-sm text-muted-foreground mb-6">Selecione um ou vários.</p>
