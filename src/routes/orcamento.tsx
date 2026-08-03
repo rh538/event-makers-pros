@@ -37,7 +37,6 @@ const servicesList = [
 
 function OrcamentoPage() {
   const [selected, setSelected] = useState<string[]>([]);
-  const [sent, setSent] = useState(false);
   const [form, setForm] = useState({
     name: "",
     email: "",
