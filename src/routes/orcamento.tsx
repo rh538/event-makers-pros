@@ -37,6 +37,8 @@ const servicesList = [
 
 function OrcamentoPage() {
   const [selected, setSelected] = useState<string[]>([]);
+  const [sent, setSent] = useState(false);
+
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -48,7 +50,33 @@ function OrcamentoPage() {
   });
 
   function toggle(id: string) {
-    setSelected((s) => (s.includes(id) ? s.filter((x) => x !== id) : [...s, id]));
+    setSelected((s) =>
+      s.includes(id) ? s.filter((x) => x !== id) : [...s, id]
+    );
+  }
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    try {
+      await fetch("/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: new URLSearchParams(
+          formData as unknown as Record<string, string>
+        ).toString(),
+      });
+
+      setSent(true);
+    } catch (err) {
+      console.error(err);
+      alert("Ocorreu um erro ao enviar o formulário.");
+    }
   }
 
   return (
@@ -82,28 +110,7 @@ function OrcamentoPage() {
         <p className="text-muted-foreground text-lg max-w-2xl mb-12">
           Escolha os serviços que pretende e preencha os dados do seu evento. A nossa equipa responde com um orçamento personalizado.
         </p>
-         <form
-           const [selected, setSelected] = useState<string[]>([]);
-const [sent, setSent] = useState(false);
-
-const [form, setForm] = useState({
-  name: "",
-  email: "",
-  phone: "",
-  eventDate: "",
-  location: "",
-  attendees: "",
-  message: "",
-});
-<form
-  name="orcamento"
-  method="POST"
-  data-netlify="true"
-  data-netlify-honeypot="bot-field"
-  onSubmit={handleSubmit}
-  className="space-y-12"
->
-  {sent ? (
+         {sent ? (
   <div className="border border-primary/40 bg-primary/5 p-8 md:p-12 text-center">
     <CheckCircle2 className="h-12 w-12 text-primary mx-auto mb-4" />
 
@@ -113,13 +120,22 @@ const [form, setForm] = useState({
 
     <p className="text-muted-foreground">
       Obrigado pela preferência.
+      <br />
       Entraremos em contacto consigo no prazo máximo de 48 horas.
     </p>
   </div>
 ) : (
-  </form>
-     )}
-
+  <form
+    name="orcamento"
+    method="POST"
+    data-netlify="true"
+    data-netlify-honeypot="bot-field"
+    onSubmit={handleSubmit}
+    className="space-y-12"
+  >
+    <input type="hidden" name="form-name" value="orcamento" />
+    <input type="hidden" name="bot-field" />
+    <input type="hidden" name="services" value={selected.join(", ")} />
 </main>
             <input type="hidden" name="form-name" value="orcamento" />
             <input type="hidden" name="bot-field" />
