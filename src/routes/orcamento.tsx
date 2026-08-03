@@ -52,25 +52,6 @@ function OrcamentoPage() {
     setSelected((s) => (s.includes(id) ? s.filter((x) => x !== id) : [...s, id]));
   }
 
-  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    const chosen = selected
-      .map((id) => servicesList.find((s) => s.id === id)?.label)
-      .filter(Boolean)
-      .join(", ");
-
-    const formData = new FormData(e.currentTarget);
-    formData.set("services", chosen);
-
-    await fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams(formData as any).toString(),
-    });
-
-    setSent(true);
-  }
-
   return (
     <div className="min-h-screen bg-background text-foreground">
       <header className="border-b border-border/60 bg-background/80 backdrop-blur-md">
@@ -115,13 +96,14 @@ function OrcamentoPage() {
             </Link>
           </div>
         ) : (
-          <form
-            name="orcamento"
-            method="POST"
-            data-netlify="true"
-            data-netlify-honeypot="bot-field"
-            onSubmit={handleSubmit}
-            className="space-y-12">
+         <form
+  name="orcamento"
+  method="POST"
+  action="/obrigado"
+  data-netlify="true"
+  data-netlify-honeypot="bot-field"
+  className="space-y-12"
+>
             <input type="hidden" name="form-name" value="orcamento" />
             <input type="hidden" name="bot-field" />
             <input type="hidden" name="services" value={selected.join(", ")} />
