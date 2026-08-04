@@ -27,6 +27,7 @@ from: `"Eventualidades" <${process.env.EMAIL_FROM}>`,
           <tr><td><strong>Telefone</strong></td><td>${data.telefone || ""}</td></tr>
           <tr><td><strong>Data do evento</strong></td><td>${data.data || ""}</td></tr>
           <tr><td><strong>Local</strong></td><td>${data.local || ""}</td></tr>
+	<tr><td><strong>Nº de participantes</strong></td><td>${data.participantes || ""}</td></tr>
           <tr><td><strong>Serviços</strong></td><td>${data.evento || ""}</td></tr>
         </table>
 
