@@ -15,7 +15,7 @@ exports.handler = async (event) => {
     });
 
     await transporter.sendMail({
-      from: `"Site Eventualidades" <${process.env.SMTP_USER}>`,
+from: `"Eventualidades" <${process.env.EMAIL_FROM}>`,
       to: process.env.EMAIL_TO,
       subject: `Novo Pedido de Orçamento - ${data.nome || ""}`,
       html: `
