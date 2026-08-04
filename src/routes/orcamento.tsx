@@ -61,6 +61,7 @@ function OrcamentoPage() {
     e.preventDefault();
     setError(null);
     setSending(true);
+try {
 
     const labels = selected
       .map((id) => servicesList.find((s) => s.id === id)?.label ?? id)
@@ -152,7 +153,7 @@ setSent(true);
           <form onSubmit={handleSubmit}
             name="orcamento"
                         action="/"
-                                    onSubmit={handleSubmit}
+                                 
             className="space-y-12"
           >            <input
               type="hidden"
