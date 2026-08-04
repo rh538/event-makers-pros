@@ -17,22 +17,22 @@ exports.handler = async (event) => {
     await transporter.sendMail({
       from: `"Site Eventualidades" <${process.env.SMTP_USER}>`,
       to: process.env.EMAIL_TO,
-      subject: `Novo Pedido de Orçamento - ${data.name || ""}`,
+      subject: `Novo Pedido de Orçamento - ${data.nome || ""}`,
       html: `
         <h2>Novo Pedido de Orçamento</h2>
 
         <table cellpadding="8" cellspacing="0" border="1" style="border-collapse:collapse;font-family:Arial,sans-serif;">
-          <tr><td><strong>Nome</strong></td><td>${data.name || ""}</td></tr>
+          <tr><td><strong>Nome</strong></td><td>${data.nome || ""}</td></tr>
           <tr><td><strong>Email</strong></td><td>${data.email || ""}</td></tr>
-          <tr><td><strong>Telefone</strong></td><td>${data.phone || ""}</td></tr>
-          <tr><td><strong>Data do evento</strong></td><td>${data.eventDate || ""}</td></tr>
-          <tr><td><strong>Local</strong></td><td>${data.location || ""}</td></tr>
-          <tr><td><strong>Serviços</strong></td><td>${data.services || ""}</td></tr>
+          <tr><td><strong>Telefone</strong></td><td>${data.telefone || ""}</td></tr>
+          <tr><td><strong>Data do evento</strong></td><td>${data.data || ""}</td></tr>
+          <tr><td><strong>Local</strong></td><td>${data.local || ""}</td></tr>
+          <tr><td><strong>Serviços</strong></td><td>${data.evento || ""}</td></tr>
         </table>
 
         <h3>Descrição</h3>
 
-        <p>${(data.message || "").replace(/\n/g,"<br>")}</p>
+        <p>${(data.mensagem || "").replace(/\n/g,"<br>")}</p>
       `,
     });
 

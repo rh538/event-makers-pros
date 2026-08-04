@@ -66,29 +66,30 @@ function OrcamentoPage() {
       .map((id) => servicesList.find((s) => s.id === id)?.label ?? id)
       .join(", ");
 
-    const body = new URLSearchParams({
-      "form-name": "orcamento",
-      "bot-field": "",
-      subject: `Novo pedido de orçamento — ${form.name}`,
-      services: labels,
-      name: form.name,
-      email: form.email,
-      phone: form.phone,
-      eventDate: form.eventDate,
-      location: form.location,
-      attendees: form.attendees,
-      message: form.message,
-    });
+    const res = await fetch("/.netlify/functions/emails", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({
+    nome: form.name,
+    email: form.email,
+    telefone: form.phone,
+    empresa: "",
+    evento: labels,
+    data: form.eventDate,
+    local: form.location,
+    mensagem: form.message,
+    participantes: form.attendees,
+  }),
+});
 
-    try {
-      const res = await fetch("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: body.toString(),
-      });
-      if (!res.ok) throw new Error(`Netlify Forms respondeu ${res.status}`);
-      setSent(true);
-    } catch (err) {
+if (!res.ok) {
+  throw new Error("Erro ao enviar email");
+}
+
+setSent(true);
+         } catch (err) {
       console.error(err);
       setError(
         "Ocorreu um erro ao enviar o formulário. Tente novamente ou escreva-nos para " +
