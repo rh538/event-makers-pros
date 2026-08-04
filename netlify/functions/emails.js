@@ -17,29 +17,30 @@ exports.handler = async (event) => {
     await transporter.sendMail({
       from: `"Site Eventualidades" <${process.env.SMTP_USER}>`,
       to: process.env.EMAIL_TO,
-      subject: "Novo Pedido de Orçamento",
+      subject: `Novo Pedido de Orçamento - ${data.name || ""}`,
       html: `
         <h2>Novo Pedido de Orçamento</h2>
 
-        <p><strong>Nome:</strong> ${data.nome || ""}</p>
-        <p><strong>Email:</strong> ${data.email || ""}</p>
-        <p><strong>Telefone:</strong> ${data.telefone || ""}</p>
-        <p><strong>Empresa:</strong> ${data.empresa || ""}</p>
-        <p><strong>Evento:</strong> ${data.evento || ""}</p>
-        <p><strong>Data:</strong> ${data.data || ""}</p>
-        <p><strong>Local:</strong> ${data.local || ""}</p>
-        <p><strong>Mensagem:</strong></p>
+        <table cellpadding="8" cellspacing="0" border="1" style="border-collapse:collapse;font-family:Arial,sans-serif;">
+          <tr><td><strong>Nome</strong></td><td>${data.name || ""}</td></tr>
+          <tr><td><strong>Email</strong></td><td>${data.email || ""}</td></tr>
+          <tr><td><strong>Telefone</strong></td><td>${data.phone || ""}</td></tr>
+          <tr><td><strong>Data do evento</strong></td><td>${data.eventDate || ""}</td></tr>
+          <tr><td><strong>Local</strong></td><td>${data.location || ""}</td></tr>
+          <tr><td><strong>Serviços</strong></td><td>${data.services || ""}</td></tr>
+        </table>
 
-        <p>${data.mensagem || ""}</p>
+        <h3>Descrição</h3>
+
+        <p>${(data.message || "").replace(/\n/g,"<br>")}</p>
       `,
     });
 
     return {
       statusCode: 200,
-      body: JSON.stringify({
-        success: true,
-      }),
+      body: JSON.stringify({ success: true }),
     };
+
   } catch (err) {
     console.error(err);
 

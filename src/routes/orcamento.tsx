@@ -39,12 +39,66 @@ const CONTACT_EMAIL = "catarinavieira@eventualidades.pt";  // Configure em Netli
 
 function OrcamentoPage() {
   const [selected, setSelected] = useState<string[]>([]);
-  const [name, setName] = useState("");
+  const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    eventDate: "",
+    location: "",
+    attendees: "",
+    message: "",
+  });
 
   function toggle(id: string) {
     setSelected((s) => (s.includes(id) ? s.filter((x) => x !== id) : [...s, id]));
   }
 
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setError(null);
+    setSending(true);
+
+    const labels = selected
+      .map((id) => servicesList.find((s) => s.id === id)?.label ?? id)
+      .join(", ");
+
+    const body = new URLSearchParams({
+      "form-name": "orcamento",
+      "bot-field": "",
+      subject: `Novo pedido de orçamento — ${form.name}`,
+      services: labels,
+      name: form.name,
+      email: form.email,
+      phone: form.phone,
+      eventDate: form.eventDate,
+      location: form.location,
+      attendees: form.attendees,
+      message: form.message,
+    });
+
+    try {
+      const res = await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: body.toString(),
+      });
+      if (!res.ok) throw new Error(`Netlify Forms respondeu ${res.status}`);
+      setSent(true);
+    } catch (err) {
+      console.error(err);
+      setError(
+        "Ocorreu um erro ao enviar o formulário. Tente novamente ou escreva-nos para " +
+          CONTACT_EMAIL +
+          ".",
+      );
+    } finally {
+      setSending(false);
+    }
+  }
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -83,19 +137,23 @@ function OrcamentoPage() {
           responde com um orçamento personalizado.
         </p>
 
-        {/* Submissão HTML nativa: o browser faz o POST para a Netlify e segue para /obrigado */}
-        <form
-          name="orcamento"
-          method="POST"
-          action="/obrigado"
-          data-netlify="true"
-          data-netlify-honeypot="bot-field"
-          className="space-y-12"
-        >
-          <input type="hidden" name="form-name" value="orcamento" />
-          <input type="hidden" name="subject" value={`Novo pedido de orçamento — ${name}`} />
-
-            <input
+        {sent ? (
+          <div className="border border-primary/40 bg-primary/5 p-8 md:p-12 text-center">
+            <CheckCircle2 className="h-12 w-12 text-primary mx-auto mb-4" />
+            <h2 className="font-display font-black text-2xl md:text-3xl mb-3">Pedido enviado!</h2>
+            <p className="text-muted-foreground">
+              Obrigado pela preferência.
+              <br />
+              Entraremos em contacto consigo no prazo máximo de 48 horas.
+            </p>
+          </div>
+        ) : (
+          <form onSubmit={handleSubmit}
+            name="orcamento"
+                        action="/"
+                                    onSubmit={handleSubmit}
+            className="space-y-12"
+          >            <input
               type="hidden"
               name="services"
               value={selected
@@ -151,17 +209,44 @@ function OrcamentoPage() {
                 <FormField
                   label="Nome*"
                   name="name"
-                  value={name}
-                  onChange={setName}
+                  value={form.name}
+                  onChange={(v) => setForm({ ...form, name: v })}
                   required
                 />
-                <FormField label="Email*" name="email" type="email" required />
-                <FormField label="Telefone" name="phone" type="tel" />
-                <FormField label="Data do evento" name="eventDate" type="date" />
-                <FormField label="Local" name="location" placeholder="Cidade / recinto" />
+                <FormField
+                  label="Email*"
+                  name="email"
+                  type="email"
+                  value={form.email}
+                  onChange={(v) => setForm({ ...form, email: v })}
+                  required
+                />
+                <FormField
+                  label="Telefone"
+                  name="phone"
+                  type="tel"
+                  value={form.phone}
+                  onChange={(v) => setForm({ ...form, phone: v })}
+                />
+                <FormField
+                  label="Data do evento"
+                  name="eventDate"
+                  type="date"
+                  value={form.eventDate}
+                  onChange={(v) => setForm({ ...form, eventDate: v })}
+                />
+                <FormField
+                  label="Local"
+                  name="location"
+                  value={form.location}
+                  onChange={(v) => setForm({ ...form, location: v })}
+                  placeholder="Cidade / recinto"
+                />
                 <FormField
                   label="Nº aproximado de participantes"
                   name="attendees"
+                  value={form.attendees}
+                  onChange={(v) => setForm({ ...form, attendees: v })}
                   placeholder="ex: 2000"
                 />
               </div>
@@ -169,6 +254,8 @@ function OrcamentoPage() {
                 <label className="block text-xs eyebrow mb-2">Descreva o seu evento</label>
                 <textarea
                   name="message"
+                  value={form.message}
+                  onChange={(e) => setForm({ ...form, message: e.target.value })}
                   rows={6}
                   maxLength={2000}
                   className="w-full bg-background border border-border px-4 py-3 text-sm focus:outline-none focus:border-primary"
@@ -177,20 +264,22 @@ function OrcamentoPage() {
               </div>
             </section>
 
+            {error && <p className="text-sm text-destructive">{error}</p>}
+
             <div className="flex flex-wrap items-center gap-4 pt-6 border-t border-border">
               <button
                 type="submit"
-                disabled={selected.length === 0}
+                disabled={sending || selected.length === 0 || !form.name || !form.email}
                 className="btn-primary disabled:opacity-40 disabled:cursor-not-allowed"
               >
-                Enviar pedido <Send className="h-4 w-4" />
+                {sending ? "A enviar..." : "Enviar pedido"} <Send className="h-4 w-4" />
               </button>
               <p className="text-xs text-muted-foreground">
                 Ao enviar concorda com o contacto pela equipa Eventualidades.
               </p>
             </div>
           </form>
-
+        )}
       </main>
     </div>
   );
@@ -206,27 +295,26 @@ function FormField({
   name,
 }: {
   label: string;
-  value?: string;
-  onChange?: (v: string) => void;
+  value: string;
+  onChange: (v: string) => void;
   type?: string;
   required?: boolean;
   placeholder?: string;
   name?: string;
 }) {
-  const controlled = value !== undefined && onChange !== undefined;
   return (
     <div>
       <label className="block text-xs eyebrow mb-2">{label}</label>
       <input
         name={name}
         type={type}
-        {...(controlled ? { value, onChange: (e: React.ChangeEvent<HTMLInputElement>) => onChange(e.target.value) } : {})}
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
         required={required}
         placeholder={placeholder}
         maxLength={200}
         className="w-full bg-background border border-border px-4 py-3 text-sm focus:outline-none focus:border-primary"
       />
-
     </div>
   );
 }
