@@ -67,7 +67,7 @@ try {
       .map((id) => servicesList.find((s) => s.id === id)?.label ?? id)
       .join(", ");
 
-    const res = await fetch("/.netlify/functions/emails", {
+    const res = await fetch("/.netlify/functions/orcamento", {
   method: "POST",
   headers: {
     "Content-Type": "application/json",
