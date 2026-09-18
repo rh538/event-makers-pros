@@ -51,6 +51,12 @@ import chaves1 from "@/assets/chaves-1.jpg";
 import chaves2 from "@/assets/chaves-2.jpg";
 import chaves3 from "@/assets/chaves-3.jpg";
 import chaves4 from "@/assets/chaves-4.jpg";
+import chaves2026a from "@/assets/images.jfif";
+import chaves2026b from "@/assets/chaves ze amaro 2.jpg";
+import vbf2026a from "@/assets/bate forte 2026.jpg";
+import vbf2026b from "@/assets/bate forte 2026 2.jpg";
+import vbf2026c from "@/assets/bate forte 2026 3.jpg";
+import vbf2026d from "@/assets/bate forte 2026 4.jpg";
 
 const vianaBateForte = [
   { src: vbfAerial, alt: "Vista aérea do palco Viana Bate Forte 2025" },
@@ -75,6 +81,17 @@ const chavesFestas = [
   { src: chaves3, alt: "Vista aérea da multidão nas Festas da Cidade de Chaves 2026" },
   { src: chaves1, alt: "Palco à noite com público nas Festas de Chaves" },
   { src: chaves4, alt: "Multidão em concerto noturno nas Festas de Chaves" },
+];
+const festaEmigranteChaves2026 = [
+  { src: chaves2026a, alt: "Zé Amaro na Festa do Emigrante de Chaves 2026" },
+  { src: chaves2026b, alt: "Público na Festa do Emigrante de Chaves 2026" },
+];
+
+const vianaBateForte2026 = [
+  { src: vbf2026a, alt: "Vista aérea dos três palcos do Festival Viana Bate Forte 2026" },
+  { src: vbf2026b, alt: "Vista aérea do Palco Liberdade no Viana Bate Forte 2026" },
+  { src: vbf2026c, alt: "Palco Liberdade no Festival Viana Bate Forte 2026" },
+  { src: vbf2026d, alt: "Palco República no Festival Viana Bate Forte 2026" },
 ];
 
 const heroImageUrl = `https://id-preview--c27d3510-e21e-4bf5-a619-57914eae6833.lovable.app${heroFestival}`;
@@ -571,6 +588,77 @@ function Projects() {
               </div>
             ))}
           </div>
+            </div>
+        </div>
+
+        {/* Festa do Emigrante de Chaves 2026 */}
+        <div className="mb-20 border border-border p-6 md:p-10 bg-background">
+          <div className="flex items-end justify-between mb-8 flex-wrap gap-4">
+            <div>
+              <div className="eyebrow mb-3 text-primary">Em destaque · 2026</div>
+              <h3 className="font-display font-black text-3xl md:text-5xl leading-none">
+                Festa do Emigrante de Chaves
+              </h3>
+              <p className="text-muted-foreground mt-3 max-w-xl text-sm md:text-base">
+                Concerto do artista Zé Amaro.
+              </p>
+            </div>
+            <div className="text-xs eyebrow">Concerto · Município</div>
+          </div>
+
+          <div className="grid grid-cols-2 gap-3 md:gap-4">
+            {festaEmigranteChaves2026.map((img) => (
+              <div
+                key={img.src}
+                className="relative overflow-hidden bg-surface aspect-[4/5]"
+              >
+                <img
+                  src={img.src}
+                  alt={img.alt}
+                  loading="lazy"
+                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 hover:scale-105"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Festival Viana Bate Forte 2026 */}
+        <div className="mb-20 border border-border p-6 md:p-10 bg-background">
+          <div className="flex items-end justify-between mb-8 flex-wrap gap-4">
+            <div>
+              <div className="eyebrow mb-3 text-primary">Em destaque · 2026</div>
+              <h3 className="font-display font-black text-3xl md:text-5xl leading-none">
+                Festival Viana Bate Forte
+              </h3>
+              <p className="text-muted-foreground mt-3 max-w-xl text-sm md:text-base">
+                Produção integral no coração de Viana do Castelo pelo segundo ano consecutivo.
+              </p>
+            </div>
+            <div className="text-xs eyebrow">Festival · Município</div>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+            {vianaBateForte2026.map((img, i) => (
+              <div
+                key={img.src}
+                className={`relative overflow-hidden bg-surface aspect-[4/5] ${
+                  i === 0 ? "col-span-2 md:col-span-2 md:row-span-2 md:aspect-auto" : ""
+                }`}
+              >
+                <img
+                  src={img.src}
+                  alt={img.alt}
+                  loading="lazy"
+                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 hover:scale-105"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+
+      </div>
+    </section>
         </div>
       </div>
     </section>
