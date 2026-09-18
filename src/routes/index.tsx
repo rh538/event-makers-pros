@@ -30,51 +30,70 @@ import project2 from "@/assets/project-2.jpg";
 import project3 from "@/assets/project-3.jpg";
 import project4 from "@/assets/project-4.jpg";
 import project5 from "@/assets/project-5.jpg";
-import logoAsset from "@/assets/logo.png";
-import mutantMelodyAsset from "@/assets/mutant-melody.png";
+import logoAsset from "@/assets/logo.png.asset.json";
+import mutantMelodyAsset from "@/assets/mutant-melody.png.asset.json";
 import project6 from "@/assets/project-6.jpg";
-import vbfAerial from "@/assets/vbf-aerial-palco.jpg";
-import vbfPalcoRoxo from "@/assets/vbf-palco-roxo.jpg";
-import vbfBeatriz from "@/assets/vbf-beatriz-rosario.jpg";
-import agenciamentoImg from "@/assets/agenciamento.jpg";
-import vbfDama from "@/assets/vbf-dama-verde.jpg";
-import vbfLuzes from "@/assets/vbf-luzes-rua.webp";
-import vbfMultidao from "@/assets/vbf-aerial-multidao.webp";
-import abfPalco from "@/assets/abf-palco.jpg";
-import abfBares from "@/assets/abf-bares.jpg";
-import abfCopo from "@/assets/abf-copo.jpg";
-import abfNoite from "@/assets/abf-noite.jpg";
-import abfConcerto from "@/assets/abf-concerto.jpg";
-import abfBanda from "@/assets/abf-banda.jpg";
-import vbf2025a from "@/assets/vbf-2025-a.jpg";
-import chaves1 from "@/assets/chaves-1.jpg";
-import chaves2 from "@/assets/chaves-2.jpg";
-import chaves3 from "@/assets/chaves-3.jpg";
-import chaves4 from "@/assets/chaves-4.jpg";
+import vbfAerial from "@/assets/vbf-aerial-palco.jpg.asset.json";
+import vbfPalcoRoxo from "@/assets/vbf-palco-roxo.jpg.asset.json";
+import vbfBeatriz from "@/assets/vbf-beatriz-rosario.jpg.asset.json";
+import agenciamentoImg from "@/assets/agenciamento.jpg.asset.json";
+import vbfDama from "@/assets/vbf-dama-verde.jpg.asset.json";
+import vbfLuzes from "@/assets/vbf-luzes-rua.webp.asset.json";
+import vbfMultidao from "@/assets/vbf-aerial-multidao.webp.asset.json";
+import abfPalco from "@/assets/abf-palco.jpg.asset.json";
+import abfBares from "@/assets/abf-bares.jpg.asset.json";
+import abfCopo from "@/assets/abf-copo.jpg.asset.json";
+import abfNoite from "@/assets/abf-noite.jpg.asset.json";
+import abfConcerto from "@/assets/abf-concerto.jpg.asset.json";
+import abfBanda from "@/assets/abf-banda.jpg.asset.json";
+import vbf2025a from "@/assets/vbf-2025-a.jpg.asset.json";
+import vbf2025b from "@/assets/vbf-2025-b.jpg.asset.json";
+import chaves1 from "@/assets/chaves-1.jpg.asset.json";
+import chaves2 from "@/assets/chaves-2.jpg.asset.json";
+import chaves3 from "@/assets/chaves-3.jpg.asset.json";
+import chaves4 from "@/assets/chaves-4.jpg.asset.json";
+import chaves2026a from "@/assets/images.jfif";
+import chaves2026b from "@/assets/chaves ze amaro 2.jpg";
+import vbf2026a from "@/assets/bate forte 2026.jpg";
+import vbf2026b from "@/assets/bate forte 2026 2.jpg";
+import vbf2026c from "@/assets/bate forte 2026 3.jpg";
+import vbf2026d from "@/assets/bate forte 2026 4.jpg";
 
 const vianaBateForte = [
-  { src: vbfAerial, alt: "Vista aérea do palco Viana Bate Forte 2025" },
-  { src: vbf2025a, alt: "Concerto ao vivo com iluminação cinematográfica no Viana Bate Forte 2025" },
-  { src: vbfPalcoRoxo, alt: "Palco iluminado a roxo com banda ao vivo" },
-  { src: vbfBeatriz, alt: "Concerto de Beatriz Rosário no Viana Bate Forte" },
-  { src: vbfDama, alt: "Concerto ao vivo com iluminação verde" },
-  { src: vbfLuzes, alt: "Iluminação da cidade durante o festival" },
-  { src: vbfMultidao, alt: "Multidão vista de cima no Viana Bate Forte" },
+  { src: vbfAerial.url, alt: "Vista aérea do palco Viana Bate Forte 2025" },
+  { src: vbf2025a.url, alt: "Concerto ao vivo com iluminação cinematográfica no Viana Bate Forte 2025" },
+  { src: vbfPalcoRoxo.url, alt: "Palco iluminado a roxo com banda ao vivo" },
+  { src: vbf2025b.url, alt: "Atuação com iluminação âmbar no Viana Bate Forte 2025" },
+  { src: vbfBeatriz.url, alt: "Concerto de Beatriz Rosário no Viana Bate Forte" },
+  { src: vbfDama.url, alt: "Concerto ao vivo com iluminação verde" },
+  { src: vbfLuzes.url, alt: "Iluminação da cidade durante o festival" },
+  { src: vbfMultidao.url, alt: "Multidão vista de cima no Viana Bate Forte" },
 ];
 
 const amadoraBeerFest = [
-  { src: abfNoite, alt: "Vista noturna do recinto do Amadora Beer Fest 2026 com palco e bares" },
-  { src: abfConcerto, alt: "Concerto no palco principal do Amadora Beer Fest 2026" },
-  { src: abfPalco, alt: "Palco principal do Amadora Beer Fest 2026 à noite" },
-  { src: abfBares, alt: "Zona de bares e food-court do Amadora Beer Fest 2026" },
-  { src: abfBanda, alt: "Banda de sopros a animar o Amadora Beer Fest 2026" },
-  { src: abfCopo, alt: "Copo reutilizável Amadora com cerveja a ser servida" },
+  { src: abfNoite.url, alt: "Vista noturna do recinto do Amadora Beer Fest 2026 com palco e bares" },
+  { src: abfConcerto.url, alt: "Concerto no palco principal do Amadora Beer Fest 2026" },
+  { src: abfPalco.url, alt: "Palco principal do Amadora Beer Fest 2026 à noite" },
+  { src: abfBares.url, alt: "Zona de bares e food-court do Amadora Beer Fest 2026" },
+  { src: abfBanda.url, alt: "Banda de sopros a animar o Amadora Beer Fest 2026" },
+  { src: abfCopo.url, alt: "Copo reutilizável Amadora com cerveja a ser servida" },
 ];
 
 const chavesFestas = [
-  { src: chaves3, alt: "Vista aérea da multidão nas Festas da Cidade de Chaves 2026" },
-  { src: chaves1, alt: "Palco à noite com público nas Festas de Chaves" },
-  { src: chaves4, alt: "Multidão em concerto noturno nas Festas de Chaves" },
+  { src: chaves3.url, alt: "Vista aérea da multidão nas Festas da Cidade de Chaves 2026" },
+  { src: chaves1.url, alt: "Palco à noite com público nas Festas de Chaves" },
+  { src: chaves2.url, alt: "Montagem de palco e torre delay em Chaves" },
+  { src: chaves4.url, alt: "Multidão em concerto noturno nas Festas de Chaves" },
+];
+const festaEmigranteChaves2026 = [
+  { src: chaves2026a, alt: "Zé Amaro na Festa do Emigrante de Chaves 2026" },
+  { src: chaves2026b, alt: "Multidão na Festa do Emigrante 2026" },
+];
+const vianaBateForte2026 = [
+  { src: vbf2026a, alt: "3 palcos vista aérea - Festival Viana Bate Forte 2026" },
+  { src: vbf2026b, alt: "Palco Liberdade - vista aérea - Viana Bate Forte 2026" },
+  { src: vbf2026c, alt: "Palco Liberdade - Festival Viana Bate Forte 2026" },
+  { src: vbf2026d, alt: "Palco República - Festival Viana Bate Forte 2026" },
 ];
 
 const heroImageUrl = `https://id-preview--c27d3510-e21e-4bf5-a619-57914eae6833.lovable.app${heroFestival}`;
@@ -125,7 +144,7 @@ const services = [
     kicker: "01",
     title: "Produção de Eventos",
     lede: "Organizamos eventos chave-na-mão, do conceito à desmontagem.",
-    image: vbfMultidao,
+    image: vbfMultidao.url,
     items: ["Festivais", "Concertos", "Eventos Corporativos", "Feiras", "Congressos", "Galas", "Festas Municipais", "Eventos Privados"],
     icon: Tent,
   },
@@ -134,7 +153,7 @@ const services = [
     kicker: "02",
     title: "Aluguer de Equipamentos",
     lede: "Disponibilizamos equipamento profissional para qualquer dimensão de evento.",
-    image: vbfPalcoRoxo,
+    image: vbfPalcoRoxo.url,
     items: ["Som", "Iluminação", "Vídeo LED", "Estruturas Truss", "Palcos", "Backline", "Torres de Delay", "Geradores", "Cablagem", "Distribuição elétrica", "Mesas e cadeiras", "Zona Kids LEGO", "Camarins", "WC's", "Efeitos e Pirotecnia"],
     icon: Speaker,
   },
@@ -143,7 +162,7 @@ const services = [
     kicker: "03",
     title: "Gestão de Bares",
     lede: "Gerimos bares em festivais e grandes eventos, assegurando toda a operação.",
-    image: abfBares,
+    image: abfBares.url,
     items: ["Recursos Humanos", "Stock", "Logística", "POS", "Copos reutilizáveis", "Equipamentos", "Coordenação", "Licenciamento"],
     icon: Beer,
   },
@@ -151,15 +170,15 @@ const services = [
     id: "agenciamento",
     kicker: "04",
     title: "Agenciamento Artístico",
-    lede: "Representamos artistas e ligamos promotores, municípios e agentes.",
-    image: agenciamentoImg,
+    lede: "Representamos artistas e ligamos promotores, municípios e agentes internacionais.",
+    image: agenciamentoImg.url,
     items: ["Booking", "Management", "Contratação", "Produção técnica"],
     icon: Music2,
   },
 ];
 
 const projects = [
-  { name: "Viana Bate Forte", year: "2025", img: vbfAerial, tag: "Festival" },
+  { name: "Viana Bate Forte", year: "2025", img: vbfAerial.url, tag: "Festival" },
   { name: "Amadora Beer Fest", year: "2026", img: null, tag: "Festival" },
   { name: "Festas da Cidade de Chaves", year: "2026", img: null, tag: "Município" },
 ];
@@ -196,7 +215,7 @@ function Nav() {
     <header className="fixed top-0 inset-x-0 z-50 backdrop-blur-md bg-background/70 border-b border-border/60">
       <div className="container-x flex items-center justify-between h-16 md:h-20">
         <a href="#top" className="flex items-center gap-3">
-          <img src={logoAsset} alt="Eventualidades" width={40} height={40} className="h-9 w-9 md:h-10 md:w-10 object-contain invert" />
+          <img src={logoAsset.url} alt="Eventualidades" width={40} height={40} className="h-9 w-9 md:h-10 md:w-10 object-contain invert" />
           <span className="font-display font-black tracking-widest text-sm md:text-base hidden sm:inline">EVENTUALIDADES</span>
         </a>
         <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
@@ -249,7 +268,8 @@ function Hero() {
         <div className="max-w-4xl">
           <div className="eyebrow mb-6">Portugal</div>
           <h1 className="heading-xl">
-            Produzimos <span className="text-primary">eventos</span>.
+            Produzimos eventos<br />
+            que ficam na <span className="text-primary">memória</span>.
           </h1>
 
           <div className="mt-8 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm md:text-base text-muted-foreground font-medium">
@@ -489,7 +509,7 @@ function Projects() {
                 Viana Bate Forte
               </h3>
               <p className="text-muted-foreground mt-3 max-w-xl text-sm md:text-base">
-                Produção integral no coração de Viana do Castelo.
+                Produção integral no coração de Viana do Castelo — palco, som, luz e estruturas.
               </p>
             </div>
             <div className="text-xs eyebrow">Festival · Município</div>
@@ -523,7 +543,7 @@ function Projects() {
                 Amadora Beer Fest
               </h3>
               <p className="text-muted-foreground mt-3 max-w-xl text-sm md:text-base">
-                Produção integral e operação de bares.
+                Produção de palco, som, luz e operação de bares num dos maiores festivais de cerveja do país.
               </p>
             </div>
             <div className="text-xs eyebrow">Festival</div>
@@ -551,7 +571,7 @@ function Projects() {
                 Festas da Cidade de Chaves
               </h3>
               <p className="text-muted-foreground mt-3 max-w-xl text-sm md:text-base">
-                Produção integral para milhares de pessoas junto ao rio Tâmega.
+                Produção integral de palco, som, luz e estruturas para milhares de pessoas junto ao rio Tâmega.
               </p>
             </div>
             <div className="text-xs eyebrow">Município</div>
@@ -573,18 +593,83 @@ function Projects() {
           </div>
         </div>
       </div>
+      {/* Festa do Emigrante de Chaves 2026 */}
+<div className="mb-20 border border-border p-6 md:p-10 bg-background">
+  <div className="flex items-end justify-between mb-8 flex-wrap gap-4">
+    <div>
+      <div className="eyebrow mb-3 text-primary">Em destaque · 2026</div>
+      <h3 className="font-display font-black text-3xl md:text-5xl leading-none">
+        Festa do Emigrante de Chaves
+      </h3>
+      <p className="text-muted-foreground mt-3 max-w-xl text-sm md:text-base">
+        Concerto do artista Zé Amaro.
+      </p>
+    </div>
+    <div className="text-xs eyebrow">Concerto · Município</div>
+  </div>
+
+  <div className="grid grid-cols-2 md:grid-cols-2 gap-3 md:gap-4">
+    {festaEmigranteChaves2026.map((img) => (
+      <div
+        key={img.src}
+        className="relative overflow-hidden bg-surface aspect-[4/5]"
+      >
+        <img
+          src={img.src}
+          alt={img.alt}
+          loading="lazy"
+          className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 hover:scale-105"
+        />
+      </div>
+    ))}
+  </div>
+</div>
+
+{/* Festival Viana Bate Forte 2026 */}
+<div className="mb-20 border border-border p-6 md:p-10 bg-background">
+  <div className="flex items-end justify-between mb-8 flex-wrap gap-4">
+    <div>
+      <div className="eyebrow mb-3 text-primary">Em destaque · 2026</div>
+      <h3 className="font-display font-black text-3xl md:text-5xl leading-none">
+        Festival Viana Bate Forte
+      </h3>
+      <p className="text-muted-foreground mt-3 max-w-xl text-sm md:text-base">
+        Produção integral no coração de Viana do Castelo pelo segundo ano consecutivo.
+      </p>
+    </div>
+    <div className="text-xs eyebrow">Festival · Município</div>
+  </div>
+
+  <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+    {vianaBateForte2026.map((img, i) => (
+      <div
+        key={img.src}
+        className={`relative overflow-hidden bg-surface aspect-[4/5] ${
+          i === 0 ? "col-span-2 md:col-span-2 md:row-span-2 md:aspect-auto" : ""
+        }`}
+      >
+        <img
+          src={img.src}
+          alt={img.alt}
+          loading="lazy"
+          className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 hover:scale-105"
+        />
+      </div>
+    ))}
+  </div>
+</div>
     </section>
   );
 }
 
 function WhyUs() {
   const reasons = [
-    { n: "01", t: "20+ anos de experiência", d: "Duas décadas a montar e desmontar bares e palcos por Portugal e Europa." },
-    { n: "02", t: "Equipa especializada", d: "Técnicos, produtores e gestores em grandes festivais." },
-    { n: "03", t: "Equipamento técnico", d: "Equipamento atualizado, som, luz, LED, vídeo e estruturas." },
+    { n: "01", t: "20+ anos de experiência", d: "Duas décadas a montar e desmontar palcos por Portugal e Europa." },
+    { n: "02", t: "Equipa especializada", d: "Técnicos, produtores e gestores com pedigree em grandes festivais." },
+    { n: "03", t: "Equipamentos próprios", d: "Parque técnico atualizado, som, luz, vídeo e estruturas." },
     { n: "04", t: "Cobertura nacional", d: "Do Algarve ao Minho, Açores e Madeira incluídos." },
-    { n: "05", t: "Produção chave-na-mão", d: "Um único interlocutor. Um único orçamento." },
-    { n: "06", t: "Resposta rápida", d: "Emergências e alterações de última hora. Resolvemos." },
+    { n: "05", t: "Produção chave-na-mão", d: "Um único interlocutor. Um único orçamento. Zero surpresas." },
+    { n: "06", t: "Resposta rápida", d: "Emergências, réplicas, alterações de última hora. Resolvemos." },
   ];
   return (
     <section className="py-24 md:py-36">
@@ -624,7 +709,7 @@ function Partners() {
         <div className="flex justify-center mb-12">
           <div className="flex flex-col items-center gap-3">
             <img
-              src={mutantMelodyAsset}
+              src={mutantMelodyAsset.url}
               alt="Mutant Melody"
               className="h-20 md:h-24 w-auto object-contain"
               loading="lazy"
@@ -649,25 +734,25 @@ function Partners() {
 function Contact() {
   const contacts = [
     {
-      area: "Gestão de Bares",
-      name: "João Paulo Viana",
-      phone: "+351 926 361 445",
-      phoneHref: "tel:+351926361445",
-      email: "joaoviana@eventualidades.pt",
+      area: "Produção · Agenciamento",
+      name: "Catarina Vieira",
+      phone: "+351 933 818 311",
+      phoneHref: "tel:+351933818311",
+      email: "catarinavieira@eventualidades.pt",
     },
     {
-      area: "Aluguer de Equipamento · Palcos · Som · Luz · LED ",
+      area: "Palcos · Som · Luz",
       name: "João Moreira",
       phone: "+351 913 536 646",
       phoneHref: "tel:+351913536646",
       email: "joaomoreira@eventualidades.pt",
     },
     {
-      area: "Produção · Agenciamento",
-      name: "Catarina Vieira",
-      phone: "+351 933 818 311",
-      phoneHref: "tel:+351933818311",
-      email: "catarinavieira@eventualidades.pt",
+      area: "Gestão de Bares",
+      name: "João Paulo Viana",
+      phone: "+351 926 361 445",
+      phoneHref: "tel:+351926361445",
+      email: "joaoviana@eventualidades.pt",
     },
   ];
   return (
@@ -766,7 +851,7 @@ function Footer() {
       <div className="container-x py-16 grid md:grid-cols-12 gap-10">
         <div className="md:col-span-4">
           <div className="flex items-center gap-3 mb-6">
-            <img src={logoAsset} alt="Eventualidades" width={40} height={40} className="h-10 w-10 object-contain invert" />
+            <img src={logoAsset.url} alt="Eventualidades" width={40} height={40} className="h-10 w-10 object-contain invert" />
             <span className="font-display font-black tracking-widest">EVENTUALIDADES</span>
           </div>
           <p className="text-sm text-muted-foreground max-w-xs">
@@ -776,7 +861,7 @@ function Footer() {
         <FooterCol title="Serviços" links={["Produção", "Equipamentos", "Gestão de Bares", "Agenciamento", "Produção Técnica"]} />
         <FooterCol title="Empresa" links={["Sobre", "Equipa", "Parceiros", "Carreiras"]} />
         <FooterCol title="Portfólio" links={["Festivais", "Concertos", "Corporate", "Municipal"]} />
-        <FooterCol title="Sede" links={["Paredes de Coura · Portugal"]} />
+        <FooterCol title="Contactos" links={["+351 933 818 311", "catarinavieira@eventualidades.pt", "Paredes de Coura · Portugal"]} />
       </div>
       <div className="border-t border-border">
         <div className="container-x py-6 flex flex-wrap items-center justify-between gap-4 text-xs text-muted-foreground">
